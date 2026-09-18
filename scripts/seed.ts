@@ -14,7 +14,7 @@ if (!uri) {
 async function main() {
   const client = new MongoClient(uri as string);
   await client.connect();
-  const db = client.db("ez_process_solution");
+  const db = client.db("devtyx");
 
   const projects = db.collection("projects");
   const services = db.collection("services");

@@ -1,7 +1,7 @@
 import { MongoClient, type Db } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
-const dbName = "ez_process_solution";
+const dbName = "devtyx";
 
 if (!uri) {
   throw new Error("Missing MONGODB_URI environment variable");
