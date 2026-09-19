@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const PHONE_TEL = "+18433091515";
-const PHONE_WA = "18433091515";
+const PHONE_TEL = "+923020058237";
+const PHONE_WA = "923020058237";
 
 export default function LetsTalkButton({
   wrapClassName = "lt-talk-wrap",

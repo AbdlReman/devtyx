@@ -64,7 +64,7 @@ export default function RefundCancellationPolicyContent() {
       <p>
         Questions about a refund or cancellation can be sent to{" "}
         <a href="mailto:support@devtyx.com">support@devtyx.com</a> or{" "}
-        <a href="tel:+18433091515">+1 (843) 309-1515</a>.
+        <a href="tel:+923020058237">+92302 0058237</a>.
       </p>
     </LegalPageLayout>
   );

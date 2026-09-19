@@ -87,7 +87,7 @@ export default function ClientAgreementContent() {
       <p>
         Questions about this Client Agreement can be sent to{" "}
         <a href="mailto:support@devtyx.com">support@devtyx.com</a> or{" "}
-        <a href="tel:+18433091515">+1 (843) 309-1515</a>.
+        <a href="tel:+923020058237">+923020058237</a>.
       </p>
     </LegalPageLayout>
   );
