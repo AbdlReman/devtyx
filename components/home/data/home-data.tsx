@@ -134,30 +134,6 @@ export const stats = [
   { num: "5+", label: "Years of excellence" },
 ];
 
-export const blogPosts = [
-  {
-    date: "June 15, 2025",
-    image: "/images/webportfolio_1.png",
-    title: "How AI is Transforming E-Commerce: Lessons from 100K Transactions",
-    excerpt: "We break down the technical approach behind our fashion resale platform and what it means for the future of AI-driven commerce.",
-    slug: "ai-ecommerce-transformation",
-  },
-  {
-    date: "May 28, 2025",
-    image: "/images/webportfolio_2.png",
-    title: "Building HIPAA-Compliant SaaS: Architecture Decisions That Matter",
-    excerpt: "A technical deep-dive into the decisions we made when building a multi-location clinic management system used across 50+ sites.",
-    slug: "hipaa-saas-architecture",
-  },
-  {
-    date: "April 10, 2025",
-    image: "/images/webportfolio_3.png",
-    title: "The 5 Cloud Architecture Patterns We Use on Every Enterprise Project",
-    excerpt: "From multi-region failover to cost-optimized auto-scaling — the patterns that underpin our most resilient production systems.",
-    slug: "cloud-architecture-patterns",
-  },
-];
-
 export const faqItems = [
   {
     q: "How Does It Work?",
