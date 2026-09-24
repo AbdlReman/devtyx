@@ -68,6 +68,11 @@ export default function RootLayout({
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="KFFDhxFRAIbAHPx4l9ARgQ"
+          strategy="afterInteractive"
+        />
         <AuthProvider>
           <AppChrome>{children}</AppChrome>
         </AuthProvider>
