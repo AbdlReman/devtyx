@@ -4,6 +4,12 @@ import { getAllProjects } from "@/lib/models/project";
 import { getAllServices } from "@/lib/models/service";
 import { getAllBlogPosts } from "@/lib/models/blog";
 
+// Without this, Next prerenders sitemap.xml once at build time and caches
+// it — projects/services/posts added afterward via the admin panel never
+// show up until the next deploy. Forcing dynamic re-fetches on every
+// request instead.
+export const dynamic = "force-dynamic";
+
 function uniqueSlugRoutes<T extends { slug: string }>(
   records: T[],
   toUrl: (record: T) => MetadataRoute.Sitemap[number]
