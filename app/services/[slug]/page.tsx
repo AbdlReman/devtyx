@@ -32,17 +32,16 @@ export default async function ServiceDetailPage({
   const service = await getServiceBySlug(slug);
   if (!service) notFound();
   const packages = await getPackagesByServiceId(service.id);
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: service.title, path: `/services/${service.slug}` },
+  ];
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Services", path: "/services" },
-          { name: service.title, path: `/services/${service.slug}` },
-        ])}
-      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbItems)} />
       <JsonLd data={serviceJsonLd(service)} />
-      <ServiceDetailContent service={service} packages={packages} />
+      <ServiceDetailContent service={service} packages={packages} breadcrumbItems={breadcrumbItems} />
     </>
   );
 }

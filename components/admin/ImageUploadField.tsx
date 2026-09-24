@@ -45,7 +45,7 @@ export default function ImageUploadField({
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={value}
-            alt=""
+            alt="Selected image preview"
             style={{ width: "64px", height: "64px", objectFit: "cover", borderRadius: "0.6rem", border: "1px solid rgba(30,38,72,0.9)", flexShrink: 0 }}
           />
         )}

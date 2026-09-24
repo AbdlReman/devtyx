@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/models/blog";
+import type { BreadcrumbItem } from "@/lib/seo";
+import { isOptimizableImageSrc } from "@/lib/image";
 import BlogHtmlContent from "./BlogHtmlContent";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 function formatBlogDate(iso: string) {
   return new Intl.DateTimeFormat("en", {
@@ -14,9 +17,11 @@ function formatBlogDate(iso: string) {
 export default function BlogDetailContent({
   post,
   relatedPosts,
+  breadcrumbItems,
 }: {
   post: BlogPost;
   relatedPosts: BlogPost[];
+  breadcrumbItems?: BreadcrumbItem[];
 }) {
   return (
     <div className="min-h-screen">
@@ -24,6 +29,7 @@ export default function BlogDetailContent({
         {/* ── Hero ──────────────────────────────────────────── */}
         <section className="hero-purple-section" style={{ paddingBottom: "5rem" }}>
           <div className="brelyx-container" style={{ position: "relative" }}>
+            {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} />}
             <div className="hero-p-badge">● {post.category}</div>
             <h1 className="slug-h1">{post.title}</h1>
             <p className="hero-p-sub" style={{ marginBottom: "1rem" }}>{post.excerpt}</p>
@@ -47,7 +53,14 @@ export default function BlogDetailContent({
               border: "1px solid #E5E7EB",
               marginBottom: "2.5rem",
             }}>
-              <Image src={post.image} alt={post.title} fill className="object-cover object-center" priority />
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover object-center"
+                priority
+                unoptimized={!isOptimizableImageSrc(post.image)}
+              />
             </div>
 
             <BlogHtmlContent html={post.content} />

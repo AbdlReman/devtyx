@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/models/blog";
+import { isOptimizableImageSrc } from "@/lib/image";
 
 function formatBlogDate(iso: string) {
   return new Intl.DateTimeFormat("en", {
@@ -19,6 +20,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           alt={post.title}
           fill
           className="object-cover object-center"
+          unoptimized={!isOptimizableImageSrc(post.image)}
         />
         <div style={{ position: "absolute", bottom: "0.75rem", left: "0.875rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
           <span className="lt-card-cat">{post.category}</span>

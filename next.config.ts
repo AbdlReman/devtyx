@@ -13,12 +13,13 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
-    // The admin image fields accept a pasted URL from anywhere (not just a
-    // Cloudinary upload), so we can't safely allowlist every possible host
-    // via remotePatterns. Skipping Next's image optimizer avoids that
-    // entirely — images still render, they're just served as-is instead of
-    // being resized/reformatted through Next's image proxy.
-    unoptimized: true,
+    // Local assets and Cloudinary uploads (the normal upload path) get
+    // resized/reformatted (WebP/AVIF) through Next's image optimizer.
+    // Admin fields also accept an arbitrary pasted URL though, and Next
+    // can't optimize a host it doesn't know about — those fall back to
+    // `unoptimized` on the individual <Image>, via isOptimizableImageSrc()
+    // in lib/image.ts, instead of erroring at request time.
+    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
   },
   async headers() {
     // Conservative, crawl-safe headers only — no CSP here, since one broad

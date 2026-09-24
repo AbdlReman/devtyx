@@ -34,18 +34,17 @@ export default async function BlogDetailPage({
 
   const allPosts = await getAllBlogPosts();
   const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ];
 
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Blog", path: "/blog" },
-          { name: post.title, path: `/blog/${post.slug}` },
-        ])}
-      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbItems)} />
       <JsonLd data={blogPostingJsonLd(post)} />
-      <BlogDetailContent post={post} relatedPosts={relatedPosts} />
+      <BlogDetailContent post={post} relatedPosts={relatedPosts} breadcrumbItems={breadcrumbItems} />
     </>
   );
 }

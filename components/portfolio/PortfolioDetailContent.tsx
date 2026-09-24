@@ -1,15 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/models/project";
+import type { BreadcrumbItem } from "@/lib/seo";
+import { isOptimizableImageSrc } from "@/lib/image";
 import RichContent from "@/components/RichContent";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
-export default function PortfolioDetailContent({ project }: { project: Project }) {
+export default function PortfolioDetailContent({
+  project,
+  breadcrumbItems,
+}: {
+  project: Project;
+  breadcrumbItems?: BreadcrumbItem[];
+}) {
   return (
     <div className="min-h-screen">
       <main>
         {/* ── Hero ──────────────────────────────────────────── */}
         <section className="hero-purple-section" style={{ paddingBottom: "5rem" }}>
           <div className="brelyx-container" style={{ position: "relative" }}>
+            {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} />}
             <div className="hero-p-badge">● {project.category}</div>
             <h1 className="slug-h1">{project.title}</h1>
             <p className="hero-p-sub">{project.tagline}</p>
@@ -35,7 +45,14 @@ export default function PortfolioDetailContent({ project }: { project: Project }
                   border: "1px solid #E5E7EB",
                   marginBottom: "2rem",
                 }}>
-                  <Image src={project.image} alt={project.title} fill className="object-cover object-top" priority />
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top"
+                    priority
+                    unoptimized={!isOptimizableImageSrc(project.image)}
+                  />
                 </div>
 
                 <div style={{ marginBottom: "2rem" }}>
@@ -67,7 +84,13 @@ export default function PortfolioDetailContent({ project }: { project: Project }
                         overflow: "hidden",
                         border: "1px solid #E5E7EB",
                       }}>
-                        <Image src={img} alt={`${project.title} — screenshot ${index + 1}`} fill className="object-cover object-top" />
+                        <Image
+                          src={img}
+                          alt={`${project.title} — screenshot ${index + 1}`}
+                          fill
+                          className="object-cover object-top"
+                          unoptimized={!isOptimizableImageSrc(img)}
+                        />
                       </div>
                     ))}
                   </div>

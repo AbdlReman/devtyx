@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/models/project";
+import { isOptimizableImageSrc } from "@/lib/image";
 
 export default function PortfolioGridSection({ projects }: { projects: Project[] }) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -62,6 +63,7 @@ export default function PortfolioGridSection({ projects }: { projects: Project[]
                   alt={project.title}
                   fill
                   className="object-cover object-top"
+                  unoptimized={!isOptimizableImageSrc(project.image)}
                 />
                 <div className="lt-card-hover-btn">
                   <div className="lt-card-hover-btn-inner">View Project →</div>

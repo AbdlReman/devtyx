@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { isOptimizableImageSrc } from "@/lib/image";
 import DeleteButton from "./DeleteButton";
 import { IconSearch, IconEdit, IconInbox } from "./icons";
 
@@ -69,7 +70,13 @@ export default function ServicesTable({ items }: { items: ServiceRow[] }) {
                   <td>
                     <div className="ez-admin-row-item">
                       <div className="ez-admin-row-thumb">
-                        <Image src={service.image} alt={service.title} fill className="object-cover object-center" />
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover object-center"
+                          unoptimized={!isOptimizableImageSrc(service.image)}
+                        />
                       </div>
                       <div style={{ minWidth: 0 }}>
                         <div className="ez-admin-row-title">{service.title}</div>

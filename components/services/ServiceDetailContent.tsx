@@ -2,15 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ServiceDetail } from "@/lib/models/service";
 import type { ServicePackage } from "@/lib/models/package";
+import type { BreadcrumbItem } from "@/lib/seo";
+import { isOptimizableImageSrc } from "@/lib/image";
 import RichContent from "@/components/RichContent";
 import QuickInquiryButton from "@/components/contact/QuickInquiryButton";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 
 export default function ServiceDetailContent({
   service,
   packages = [],
+  breadcrumbItems,
 }: {
   service: ServiceDetail;
   packages?: ServicePackage[];
+  breadcrumbItems?: BreadcrumbItem[];
 }) {
   return (
     <div className="min-h-screen">
@@ -18,6 +23,7 @@ export default function ServiceDetailContent({
         {/* ── Hero ──────────────────────────────────────────── */}
         <section className="hero-purple-section" style={{ paddingBottom: "5rem" }}>
           <div className="brelyx-container" style={{ position: "relative" }}>
+            {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} />}
             <div className="hero-p-badge">● {service.category}</div>
             <h1 className="slug-h1">{service.title}</h1>
             <p className="hero-p-sub">{service.tagline}</p>
@@ -46,7 +52,14 @@ export default function ServiceDetailContent({
                   border: "1px solid #E5E7EB",
                   marginBottom: "2rem",
                 }}>
-                  <Image src={service.image} alt={service.title} fill className="object-cover object-center" priority />
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                    unoptimized={!isOptimizableImageSrc(service.image)}
+                  />
                 </div>
 
                 <div style={{ marginBottom: "2.5rem" }}>

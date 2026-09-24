@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllServices } from "@/lib/models/service";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { isOptimizableImageSrc } from "@/lib/image";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const dynamic = "force-dynamic";
@@ -97,6 +98,7 @@ export default async function ServicesPage() {
                       alt={svc.title}
                       fill
                       className="object-cover object-center"
+                      unoptimized={!isOptimizableImageSrc(svc.image)}
                     />
                     <div className="lt-card-hover-btn">
                       <div className="lt-card-hover-btn-inner">Explore Service →</div>

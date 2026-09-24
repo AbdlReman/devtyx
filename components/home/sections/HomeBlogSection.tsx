@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { BlogPost } from "@/lib/models/blog";
+import { isOptimizableImageSrc } from "@/lib/image";
 
 function formatBlogDate(iso: string) {
   return new Intl.DateTimeFormat("en", {
@@ -30,6 +31,7 @@ export default function HomeBlogSection({ posts }: { posts: BlogPost[] }) {
                   alt={post.title}
                   fill
                   className="object-cover object-top"
+                  unoptimized={!isOptimizableImageSrc(post.image)}
                 />
               </div>
               <div className="blog-card-body">

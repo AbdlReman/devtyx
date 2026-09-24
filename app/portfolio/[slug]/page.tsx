@@ -30,17 +30,16 @@ export default async function ProjectDetailPage({
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
   if (!project) notFound();
+  const breadcrumbItems = [
+    { name: "Home", path: "/" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: project.title, path: `/portfolio/${project.slug}` },
+  ];
   return (
     <>
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Portfolio", path: "/portfolio" },
-          { name: project.title, path: `/portfolio/${project.slug}` },
-        ])}
-      />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbItems)} />
       <JsonLd data={creativeWorkJsonLd(project)} />
-      <PortfolioDetailContent project={project} />
+      <PortfolioDetailContent project={project} breadcrumbItems={breadcrumbItems} />
     </>
   );
 }

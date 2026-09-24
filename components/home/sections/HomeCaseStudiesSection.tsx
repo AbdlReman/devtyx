@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import type { Project } from "@/lib/models/project";
+import { isOptimizableImageSrc } from "@/lib/image";
 
 export default function HomeCaseStudiesSection({ projects }: { projects: Project[] }) {
   const featured = projects.slice(0, 6);
@@ -46,6 +47,7 @@ export default function HomeCaseStudiesSection({ projects }: { projects: Project
               alt={cs.title}
               fill
               className="object-cover object-top transition-all duration-500"
+              unoptimized={!isOptimizableImageSrc(cs.image)}
             />
           </div>
         </div>
