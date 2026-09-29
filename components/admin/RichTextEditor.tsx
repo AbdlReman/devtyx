@@ -51,9 +51,9 @@ export default function RichTextEditor({
           // separately-loadable plugins — listing them here makes TinyMCE
           // try (and fail with a 404) to fetch a nonexistent plugin script.
           // Their toolbar buttons below still work without being listed here.
-          plugins: ["link", "lists", "image", "code"],
+          plugins: ["link", "lists", "image", "code", "table"],
           toolbar:
-            "undo redo | blocks | bold italic | bullist numlist blockquote | link image | hr | code",
+            "undo redo | blocks | bold italic | bullist numlist blockquote | link image table | hr | code",
           content_style: "body { font-family: sans-serif; font-size: 15px; }",
         }}
         onEditorChange={(content) => {
