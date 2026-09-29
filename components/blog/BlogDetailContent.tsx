@@ -32,8 +32,7 @@ export default function BlogDetailContent({
             {breadcrumbItems && <Breadcrumbs items={breadcrumbItems} />}
             <div className="hero-p-badge">● {post.category}</div>
             <h1 className="slug-h1">{post.title}</h1>
-            <p className="hero-p-sub" style={{ marginBottom: "1rem" }}>{post.excerpt}</p>
-            <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)" }}>
+            <div style={{ display: "flex", gap: "1.25rem", flexWrap: "wrap", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", marginTop: "1rem" }}>
               <span>{post.author}</span>
               <span>{formatBlogDate(post.date)}</span>
               <span>{post.readTime}</span>
