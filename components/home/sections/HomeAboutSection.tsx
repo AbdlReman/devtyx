@@ -13,7 +13,7 @@ export default function HomeAboutSection() {
               Our Journey, Vision,<br />And Values
             </h2>
             <p className="lt-lead" style={{ marginBottom: "1rem" }}>
-              Since 2009, DEVTYX has been delivering digital products that combine deep technical
+              Since 2019, DEVTYX has been delivering digital products that combine deep technical
               expertise with a genuine understanding of business outcomes. We have helped over 120 ambitious
               teams across 23+ countries launch platforms that scale.
             </p>
