@@ -12,7 +12,7 @@ export default function ConsultHeroSection() {
       <div className="brelyx-container" style={{ position: "relative" }}>
         <div className="hero-p-badge">● Mobile App Consulting</div>
         <h1 className="hero-p-h1">
-          Mobile App Consulting Services<br />That Help You Build the Right App
+          Mobile App Consulting Services
         </h1>
         <p className="hero-p-sub">
           Have an app idea but not sure where to start? DEVTYX mobile app development consulting gives
