@@ -2142,63 +2142,106 @@ body {
   backdrop-filter: blur(28px);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
-  padding: 2.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 5.5rem 1.75rem 3rem;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .brelyx-mobile-nav.open { transform: translateX(0); }
 .brelyx-mobile-nav a {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: rgba(245,247,255,0.6);
   text-decoration: none;
   transition: color 0.2s;
 }
-.brelyx-mobile-nav a:hover { color: #ffffff; }
 
-.brelyx-mobile-nav-services-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: rgba(245,247,255,0.6);
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.brelyx-mobile-nav-services-toggle:hover { color: #ffffff; }
-.brelyx-mobile-nav-services {
+/* Scroll container: everything below the fixed close button. Keeping this
+   separate from .brelyx-mobile-nav lets the panel scroll internally when the
+   Services accordion expands and no longer fits the viewport. */
+.brelyx-mobile-nav-scroll {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.1rem;
-  margin-top: -1.25rem;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
 }
-.brelyx-mobile-nav-services a {
-  font-size: 1rem;
-  font-weight: 600;
+
+.brelyx-mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.brelyx-mobile-nav-links a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(245,247,255,0.6);
+}
+.brelyx-mobile-nav-links a:hover { color: #ffffff; }
+
+/* Services accordion: a distinct, left-aligned card rather than words mixed
+   into the centered nav list — keeps it legible once sub-items expand. */
+.brelyx-mobile-nav-services-wrap {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+.brelyx-mobile-nav-services-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.brelyx-mobile-nav-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 1.1rem;
 }
 .brelyx-mobile-nav-service-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
+}
+.brelyx-mobile-nav-services > .brelyx-mobile-nav-service-group > a {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(245,247,255,0.85);
 }
 .brelyx-mobile-nav-subitems {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(255,255,255,0.1);
 }
 .brelyx-mobile-nav-subitems a {
   font-size: 0.82rem;
   font-weight: 500;
-  color: rgba(245,247,255,0.45);
+  color: rgba(245,247,255,0.5);
+}
+.brelyx-mobile-nav-subitems a:hover,
+.brelyx-mobile-nav-services > .brelyx-mobile-nav-service-group > a:hover { color: #ffffff; }
+.brelyx-mobile-nav-services-all {
+  display: block;
+  margin-top: 0.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3FE0D0;
 }
 
 .brelyx-hamburger {
