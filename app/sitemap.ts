@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/blog",
     "/music-app-developers",
     "/hybrid-app-development",
+    "/mobile-app-consultation",
     "/privacy-policy",
     "/terms-of-service",
     "/refund-policy",

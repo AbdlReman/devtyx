@@ -29,6 +29,7 @@ const serviceLinks: ServiceNavItem[] = [
     subItems: [
       { label: "Hybrid App", href: "/hybrid-app-development" },
       { label: "Music App", href: "/music-app-developers" },
+      { label: "Mobile App Consultation", href: "/mobile-app-consultation" },
     ],
   },
   { label: "Data & AI", href: "/services/data-ai" },
