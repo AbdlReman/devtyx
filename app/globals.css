@@ -1641,6 +1641,36 @@ body {
   color: #6C4CFF;
 }
 
+.brelyx-nav-dropdown-subwrap {
+  position: relative;
+  /* Same bridge technique as .brelyx-nav-dropdown, applied horizontally so
+     the cursor can travel from this row into the submenu without crossing
+     a dead gap that would close it. */
+  padding-right: 0.9rem;
+  margin-right: -0.9rem;
+}
+.brelyx-nav-dropdown-item-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.brelyx-nav-dropdown-submenu {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 240px;
+  background: #FFFFFF;
+  border-radius: 0.9rem;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 20px 50px rgba(17,24,39,0.14);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  z-index: 61;
+}
+
 /* ━━━ FOOTER LINKS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 .brelyx-footer-link {
@@ -2152,6 +2182,23 @@ body {
 .brelyx-mobile-nav-services a {
   font-size: 1rem;
   font-weight: 600;
+}
+.brelyx-mobile-nav-service-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.brelyx-mobile-nav-subitems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brelyx-mobile-nav-subitems a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(245,247,255,0.45);
 }
 
 .brelyx-hamburger {

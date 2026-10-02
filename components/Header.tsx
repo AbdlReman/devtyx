@@ -13,15 +13,28 @@ const navLinks: [string, string][] = [
   ["Contact", "/contact"],
 ];
 
+type ServiceNavItem = {
+  label: string;
+  href: string;
+  subItems?: { label: string; href: string }[];
+};
+
 // Hardcoded on purpose — the services dropdown should not depend on the
 // database or any JSON data file, so it always renders even if that data changes.
-const serviceLinks: [string, string][] = [
-  ["Web & Custom Software", "/services/web-custom-software"],
-  ["Mobile & Experience", "/services/mobile-experience"],
-  ["Data & AI", "/services/data-ai"],
-  ["Cloud, DevOps & Security", "/services/cloud-devops-security"],
-  ["UI/UX Design", "/services/ui-ux-design"],
-  ["Digital Strategy & Product Consulting", "/services/digital-strategy-consulting"],
+const serviceLinks: ServiceNavItem[] = [
+  { label: "Web & Custom Software", href: "/services/web-custom-software" },
+  {
+    label: "Mobile & Experience",
+    href: "/services/mobile-experience",
+    subItems: [
+      { label: "Hybrid App", href: "/hybrid-app-development" },
+      { label: "Music App", href: "/music-app-developers" },
+    ],
+  },
+  { label: "Data & AI", href: "/services/data-ai" },
+  { label: "Cloud, DevOps & Security", href: "/services/cloud-devops-security" },
+  { label: "UI/UX Design", href: "/services/ui-ux-design" },
+  { label: "Digital Strategy & Product Consulting", href: "/services/digital-strategy-consulting" },
 ];
 
 export default function Header() {
@@ -29,6 +42,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [servicesSubOpen, setServicesSubOpen] = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const { data: session } = useSession();
 
@@ -77,10 +91,21 @@ export default function Header() {
               <Link href="/services" onClick={() => setMenuOpen(false)}>
                 All Services
               </Link>
-              {serviceLinks.map(([label, href]) => (
-                <Link key={href} href={href} onClick={() => setMenuOpen(false)}>
-                  {label}
-                </Link>
+              {serviceLinks.map((item) => (
+                <div key={item.href} className="brelyx-mobile-nav-service-group">
+                  <Link href={item.href} onClick={() => setMenuOpen(false)}>
+                    {item.label}
+                  </Link>
+                  {item.subItems && (
+                    <div className="brelyx-mobile-nav-subitems">
+                      {item.subItems.map((sub) => (
+                        <Link key={sub.href} href={sub.href} onClick={() => setMenuOpen(false)}>
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           )}
@@ -136,7 +161,10 @@ export default function Header() {
             <div
               className="brelyx-nav-dropdown"
               onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseLeave={() => {
+                setServicesOpen(false);
+                setServicesSubOpen(null);
+              }}
             >
               <Link href="/services" className="brelyx-nav-link brelyx-nav-link-dropdown">
                 Services
@@ -146,11 +174,36 @@ export default function Header() {
               </Link>
               {servicesOpen && (
                 <div className="brelyx-nav-dropdown-menu">
-                  {serviceLinks.map(([label, href]) => (
-                    <Link key={href} href={href} className="brelyx-nav-dropdown-item">
-                      {label}
-                    </Link>
-                  ))}
+                  {serviceLinks.map((item) =>
+                    item.subItems ? (
+                      <div
+                        key={item.href}
+                        className="brelyx-nav-dropdown-subwrap"
+                        onMouseEnter={() => setServicesSubOpen(item.href)}
+                        onMouseLeave={() => setServicesSubOpen(null)}
+                      >
+                        <Link href={item.href} className="brelyx-nav-dropdown-item brelyx-nav-dropdown-item-parent">
+                          {item.label}
+                          <svg width="9" height="9" fill="none" viewBox="0 0 24 24" style={{ flexShrink: 0 }}>
+                            <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </Link>
+                        {servicesSubOpen === item.href && (
+                          <div className="brelyx-nav-dropdown-submenu">
+                            {item.subItems.map((sub) => (
+                              <Link key={sub.href} href={sub.href} className="brelyx-nav-dropdown-item">
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link key={item.href} href={item.href} className="brelyx-nav-dropdown-item">
+                        {item.label}
+                      </Link>
+                    )
+                  )}
                   <Link href="/services" className="brelyx-nav-dropdown-item brelyx-nav-dropdown-item-all">
                     All Services →
                   </Link>
