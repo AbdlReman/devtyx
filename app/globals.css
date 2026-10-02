@@ -3706,6 +3706,45 @@ body {
   transition: gap 0.2s;
 }
 .lt-card:hover .lt-card-read { gap: 0.6rem; }
+.lt-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.lt-pagination-btn {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid #E5E7EB;
+  background: #FFFFFF;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+}
+.lt-pagination-btn:hover:not(:disabled) {
+  border-color: #93E2F9;
+  color: #6C4CFF;
+  transform: translateY(-2px);
+}
+.lt-pagination-btn--active {
+  background: #6C4CFF;
+  border-color: #6C4CFF;
+  color: #FFFFFF;
+}
+.lt-pagination-btn--active:hover {
+  color: #FFFFFF;
+  transform: none;
+}
+.lt-pagination-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 .lt-tech-tag {
   display: inline-flex;
   align-items: center;

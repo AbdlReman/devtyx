@@ -3,14 +3,6 @@ import Link from "next/link";
 import type { BlogPost } from "@/lib/models/blog";
 import { isOptimizableImageSrc } from "@/lib/image";
 
-function formatBlogDate(iso: string) {
-  return new Intl.DateTimeFormat("en", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  }).format(new Date(iso));
-}
-
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="lt-card" style={{ display: "flex", flexDirection: "column", height: "100%" }}>
@@ -22,12 +14,6 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           className="object-cover object-center"
           unoptimized={!isOptimizableImageSrc(post.image)}
         />
-        <div style={{ position: "absolute", bottom: "0.75rem", left: "0.875rem", display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-          <span className="lt-card-cat">{post.category}</span>
-          <span style={{ fontSize: "0.65rem", color: "#374151", fontWeight: 600, background: "rgba(255,255,255,0.92)", padding: "0.2rem 0.5rem", borderRadius: "0.4rem" }}>
-            {formatBlogDate(post.date)}
-          </span>
-        </div>
       </div>
       <div className="lt-card-body" style={{ flex: 1 }}>
         <div className="lt-card-title">{post.title}</div>
