@@ -21,6 +21,7 @@ type ServiceNavItem = {
 
 // Hardcoded on purpose — the services dropdown should not depend on the
 // database or any JSON data file, so it always renders even if that data changes.
+
 const serviceLinks: ServiceNavItem[] = [
   { label: "Web & Custom Software", href: "/services/web-custom-software" },
   {
