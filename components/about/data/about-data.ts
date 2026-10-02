@@ -6,10 +6,31 @@
 ];
 
 export const testimonials = [
-  { quote: "DEVTYX transformed our outdated platform in under 8 weeks — an incredible feat our previous agency couldn't achieve in a year. The quality and speed were exceptional.", author: "Sarah K.", role: "CTO, FinanceFlow", image: "/images/281.jpg", company: "FinanceFlow", rating: 5 },
-  { quote: "Their team embedded seamlessly with ours. The quality of code, speed of delivery, and depth of expertise were exceptional across every sprint. I'd work with them again without hesitation.", author: "Marcus T.", role: "VP Engineering, MedTech", image: "/images/786.jpg", company: "MedTech Solutions", rating: 5 },
-  { quote: "The AI reconciliation platform they built processes millions of records daily. What took weeks now runs in hours. Genuinely transformative — and a pleasure to work with.", author: "Aisha R.", role: "Director of Operations", image: "/images/287.jpg", company: "Grand Hotels Group", rating: 5 },
+  {
+    quote: "Amazing experience. They developed my brandedthrift store website with great attention to detail. The site is fast, responsive, and looks exactly how I envisioned it. Great communication and excellent technical skills.",
+    author: "Branded Thrift",
+    role: "Store Owner",
+    company: "Branded Thrift",
+    rating: 5,
+  },
+  {
+    quote: "Website development service se bohat mutmaeen hoon. Main ne apni e-commerce website Al Haram Store banwai aur result meri expectations se bhi behtar raha.",
+    author: "Ahmed Bhai",
+    role: "Owner, Al Haram Store",
+    company: "Al Haram Store",
+    companyUrl: "https://alharamstore.com/",
+    rating: 5,
+  },
+  {
+    quote: "Highly Recommended for Web Development & SEO.",
+    author: "Skardu Expedition",
+    role: "Client",
+    company: "Skardu Expedition",
+    rating: 5,
+  },
 ];
+
+export const googleReviewsUrl = "https://share.google/OMoJaSHgxtch9t3Ie";
 
 export const aboutStoryHighlights: [string, string][] = [
   ["Remote-first", "Teams across 23+ countries"],

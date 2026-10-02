@@ -1,5 +1,13 @@
-﻿import Image from "next/image";
-import { testimonials } from "../data/about-data";
+import { testimonials, googleReviewsUrl } from "../data/about-data";
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase())
+    .join("");
+}
 
 export default function AboutTestimonialsSection() {
   return (
@@ -41,8 +49,15 @@ export default function AboutTestimonialsSection() {
                   overflow: "hidden",
                   flexShrink: 0,
                   border: "2px solid #E0F4FD",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "#E0F4FD",
+                  color: "#6C4CFF",
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
                 }}>
-                  <Image src={t.image} alt={t.author} fill className="object-cover" />
+                  {getInitials(t.author)}
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#111827" }}>{t.author}</div>
@@ -57,11 +72,40 @@ export default function AboutTestimonialsSection() {
                   fontWeight: 700,
                   flexShrink: 0,
                 }}>
-                  {t.company}
+                  {"companyUrl" in t && t.companyUrl ? (
+                    <a href={t.companyUrl} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                      {t.company}
+                    </a>
+                  ) : (
+                    t.company
+                  )}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "3rem" }}>
+          <a
+            href={googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              padding: "0.75rem 1.5rem",
+              borderRadius: "999px",
+              border: "1px solid #E5E7EB",
+              fontSize: "0.85rem",
+              fontWeight: 600,
+              color: "#111827",
+              textDecoration: "none",
+            }}
+          >
+            <span style={{ color: "#F59E0B" }}>★★★★★</span>
+            See all our reviews on Google
+          </a>
         </div>
 
       </div>
