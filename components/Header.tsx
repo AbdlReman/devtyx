@@ -7,17 +7,29 @@ import { useSession, signOut } from "next-auth/react";
 import LetsTalkButton from "@/components/LetsTalkButton";
 
 const navLinks: [string, string][] = [
-  ["Services", "/services"],
   ["Portfolio", "/portfolio"],
   ["Blog", "/blog"],
   ["About", "/about"],
   ["Contact", "/contact"],
 ];
 
+// Hardcoded on purpose — the services dropdown should not depend on the
+// database or any JSON data file, so it always renders even if that data changes.
+const serviceLinks: [string, string][] = [
+  ["Web & Custom Software", "/services/web-custom-software"],
+  ["Mobile & Experience", "/services/mobile-experience"],
+  ["Data & AI", "/services/data-ai"],
+  ["Cloud, DevOps & Security", "/services/cloud-devops-security"],
+  ["UI/UX Design", "/services/ui-ux-design"],
+  ["Digital Strategy & Product Consulting", "/services/digital-strategy-consulting"],
+];
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -43,6 +55,35 @@ export default function Header() {
               <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </button>
+          <button
+            type="button"
+            className="brelyx-mobile-nav-services-toggle"
+            onClick={() => setMobileServicesOpen((open) => !open)}
+            aria-expanded={mobileServicesOpen}
+          >
+            Services
+            <svg
+              width="14"
+              height="14"
+              fill="none"
+              viewBox="0 0 24 24"
+              style={{ transform: mobileServicesOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}
+            >
+              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+          {mobileServicesOpen && (
+            <div className="brelyx-mobile-nav-services">
+              <Link href="/services" onClick={() => setMenuOpen(false)}>
+                All Services
+              </Link>
+              {serviceLinks.map(([label, href]) => (
+                <Link key={href} href={href} onClick={() => setMenuOpen(false)}>
+                  {label}
+                </Link>
+              ))}
+            </div>
+          )}
           {navLinks.map(([label, href]) => (
             <Link key={label} href={href} onClick={() => setMenuOpen(false)}>
               {label}
@@ -92,6 +133,30 @@ export default function Header() {
           </Link>
 
           <nav className="brelyx-header-nav">
+            <div
+              className="brelyx-nav-dropdown"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link href="/services" className="brelyx-nav-link brelyx-nav-link-dropdown">
+                Services
+                <svg width="11" height="11" fill="none" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              {servicesOpen && (
+                <div className="brelyx-nav-dropdown-menu">
+                  {serviceLinks.map(([label, href]) => (
+                    <Link key={href} href={href} className="brelyx-nav-dropdown-item">
+                      {label}
+                    </Link>
+                  ))}
+                  <Link href="/services" className="brelyx-nav-dropdown-item brelyx-nav-dropdown-item-all">
+                    All Services →
+                  </Link>
+                </div>
+              )}
+            </div>
             {navLinks.map(([label, href]) => (
               <Link key={href} href={href} className="brelyx-nav-link">
                 {label}

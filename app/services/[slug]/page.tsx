@@ -1,10 +1,14 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ServiceDetailContent from "@/components/services/ServiceDetailContent";
-import { getServiceBySlug } from "@/lib/models/service";
-import { getPackagesByServiceId } from "@/lib/models/package";
+import { getAllServices, getServiceBySlug } from "@/lib/data/services";
+import { getPackagesByServiceSlug } from "@/lib/data/packages";
 import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
+
+export function generateStaticParams() {
+  return getAllServices().map((service) => ({ slug: service.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -12,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const service = await getServiceBySlug(slug);
+  const service = getServiceBySlug(slug);
   if (!service) return {};
   return buildMetadata({
     title: service.title,
@@ -29,9 +33,9 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const service = await getServiceBySlug(slug);
+  const service = getServiceBySlug(slug);
   if (!service) notFound();
-  const packages = await getPackagesByServiceId(service.id);
+  const packages = getPackagesByServiceSlug(service.slug);
   const breadcrumbItems = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },

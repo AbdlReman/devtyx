@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { getAllProjects } from "@/lib/models/project";
-import { getAllServices } from "@/lib/models/service";
+import { getAllServices } from "@/lib/data/services";
 import { getAllBlogPosts } from "@/lib/models/blog";
 
 // Without this, Next prerenders sitemap.xml once at build time and caches
@@ -45,13 +45,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic routes depend on the database; if it's unreachable at build/
   // request time, fall back to the static routes rather than failing the
   // whole sitemap (and taking search engines' view of the site down with it).
-  const [projectsResult, servicesResult, postsResult] = await Promise.allSettled([
+  const [projectsResult, postsResult] = await Promise.allSettled([
     getAllProjects(),
-    getAllServices(),
     getAllBlogPosts(),
   ]);
   const projects = projectsResult.status === "fulfilled" ? projectsResult.value : [];
-  const services = servicesResult.status === "fulfilled" ? servicesResult.value : [];
+  const services = getAllServices();
   const posts = postsResult.status === "fulfilled" ? postsResult.value : [];
 
   const projectRoutes = uniqueSlugRoutes(projects, (project) => ({
