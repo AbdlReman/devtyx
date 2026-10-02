@@ -1595,6 +1595,12 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  /* Padding + the matching negative margin extend this element's hoverable
+     box down through the visual gap to the menu below, without changing its
+     layout footprint — otherwise the cursor crosses "dead" background while
+     dragging down and mouseleave fires before it ever reaches the menu. */
+  padding-bottom: 1.1rem;
+  margin-bottom: -1.1rem;
 }
 .brelyx-nav-link-dropdown {
   display: inline-flex;
@@ -1603,7 +1609,7 @@ body {
 }
 .brelyx-nav-dropdown-menu {
   position: absolute;
-  top: calc(100% + 1.1rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 280px;
