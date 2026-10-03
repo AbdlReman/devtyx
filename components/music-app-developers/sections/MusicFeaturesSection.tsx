@@ -1,15 +1,25 @@
+import Image from "next/image";
 import { featureCategories } from "../data/music-app-developers-data";
 
 export default function MusicFeaturesSection() {
   return (
     <section className="lt-section-alt">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 4rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 2.5rem" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">Features We Develop</div>
           </div>
           <h2 className="lt-h2">Built for listeners. Built for scale.</h2>
         </div>
+
+        <Image
+          src="/images/music-landing-images/04-music-app-features-transparent.webp"
+          alt="AI recommendations, offline downloads, synced lyrics and other music app features"
+          width={1400}
+          height={1100}
+          className="object-contain"
+          style={{ width: "100%", maxWidth: "720px", height: "auto", display: "block", margin: "0 auto 3rem" }}
+        />
 
         <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}
           className="lt-why-grid">
