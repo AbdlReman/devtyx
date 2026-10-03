@@ -1,14 +1,24 @@
+import Image from "next/image";
 import { processSteps } from "../data/mobile-app-consultation-data";
 
 export default function ConsultProcessSection() {
   return (
     <section className="lt-section-alt">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 4rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 3rem" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">How It Works</div>
           </div>
           <h2 className="lt-h2">How Our Mobile App Consulting Works</h2>
+        </div>
+
+        <div style={{ position: "relative", aspectRatio: "16/10", borderRadius: "1.5rem", overflow: "hidden", border: "1px solid #E5E7EB", boxShadow: "0 20px 50px rgba(108,76,255,0.12)", marginBottom: "3rem" }}>
+          <Image
+            src="/images/app-consultation-images/04-how-consulting-works.webp"
+            alt="DEVTYX mobile app consulting process: free consultation, discovery, research, planning, blueprint and next steps"
+            fill
+            className="object-cover object-center"
+          />
         </div>
 
         <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}

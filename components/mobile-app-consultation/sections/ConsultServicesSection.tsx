@@ -1,3 +1,4 @@
+import Image from "next/image";
 import QuickInquiryButton from "@/components/contact/QuickInquiryButton";
 import { consultingServices } from "../data/mobile-app-consultation-data";
 
@@ -5,7 +6,7 @@ export default function ConsultServicesSection() {
   return (
     <section className="lt-section">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 2.5rem" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">What We Offer</div>
           </div>
@@ -15,6 +16,15 @@ export default function ConsultServicesSection() {
             fixing an app that isn&apos;t performing. Choose one service or combine them into a complete
             app blueprint.
           </p>
+        </div>
+
+        <div style={{ position: "relative", aspectRatio: "16/9", borderRadius: "1.5rem", overflow: "hidden", border: "1px solid #E5E7EB", boxShadow: "0 20px 50px rgba(108,76,255,0.12)", marginBottom: "3rem" }}>
+          <Image
+            src="/images/app-consultation-images/02-mobile-app-consulting-services.webp"
+            alt="Our mobile app consulting services: idea validation, UI/UX, technology selection, architecture, MVP planning, security, monetization, app audit and rescue"
+            fill
+            className="object-cover object-center"
+          />
         </div>
 
         <div style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(2, minmax(0,1fr))" }}

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import QuickInquiryButton from "@/components/contact/QuickInquiryButton";
 import { benefits } from "../data/mobile-app-consultation-data";
 
@@ -5,15 +6,24 @@ export default function ConsultBenefitsSection() {
   return (
     <section className="lt-section-alt">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "grid", gap: "3rem", alignItems: "center", marginBottom: "3.5rem" }}
+          className="lt-split-heading">
+          <div>
             <div className="lt-kicker">Benefits</div>
+            <h2 className="lt-h2">Benefits of Mobile App Consultation</h2>
+            <p className="lt-lead" style={{ margin: 0 }}>
+              A few weeks of expert planning can save months of rework. Here&apos;s what consulting gives
+              you before development starts — including a documented app blueprint you walk away with.
+            </p>
           </div>
-          <h2 className="lt-h2">Benefits of Mobile App Consultation</h2>
-          <p className="lt-lead">
-            A few weeks of expert planning can save months of rework. Here&apos;s what consulting gives
-            you before development starts.
-          </p>
+          <Image
+            src="/images/app-consultation-images/03-app-blueprint-deliverable-transparent.webp"
+            alt="A DEVTYX app blueprint: cost estimate, feature priority, timeline and roadmap, and recommended tech stack"
+            width={1600}
+            height={820}
+            className="object-contain"
+            style={{ width: "100%", height: "auto" }}
+          />
         </div>
 
         <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}
