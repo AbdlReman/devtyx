@@ -1,15 +1,25 @@
+import Image from "next/image";
 import { featureCategories } from "../data/hybrid-app-development-data";
 
 export default function HybridFeaturesSection() {
   return (
     <section className="lt-section-alt">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 4rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 2.5rem" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">Capabilities</div>
           </div>
           <h2 className="lt-h2">Built once. Works everywhere.</h2>
         </div>
+
+        <Image
+          src="/images/hybrid-app-images/03-built-once-works-everywhere-transparent.webp"
+          alt="Cross-platform app architecture: one shared codebase with native modules for camera, biometrics, payments, push, GPS and Bluetooth"
+          width={1400}
+          height={1000}
+          className="object-contain"
+          style={{ width: "100%", maxWidth: "760px", height: "auto", display: "block", margin: "0 auto 3rem" }}
+        />
 
         <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}
           className="lt-why-grid">
