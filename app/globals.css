@@ -2734,6 +2734,23 @@ body {
   .hero-chip { display: none; }
 }
 
+/* ─ Music hero floating badges ─ */
+.music-hero-float-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  background: rgba(10,16,40,0.75);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(14px);
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .music-hero-float-badge { display: none; }
+}
+
 /* ─ Scroll mouse indicator ─ */
 .hero-scroll-cue {
   position: relative;
@@ -3209,6 +3226,11 @@ body {
   color: #6B7280;
   font-weight: 500;
   letter-spacing: 0.02em;
+}
+
+.lt-split-heading { grid-template-columns: 1.1fr 1fr; }
+@media (max-width: 767px) {
+  .lt-split-heading { grid-template-columns: minmax(0,1fr) !important; }
 }
 
 /* ── Blog / News ────────────────────────────────────────── */

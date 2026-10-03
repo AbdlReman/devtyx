@@ -11,13 +11,17 @@ export default function MusicTechStackSection() {
           <h2 className="lt-h2">The tools behind the sound.</h2>
         </div>
 
-        <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(2, minmax(0,1fr))", maxWidth: "900px", margin: "0 auto" }}
+        <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}
           className="lt-why-grid">
           {techStack.map((group) => (
             <div key={group.label} className="lt-why-card">
-              <div style={{ fontSize: "0.9rem", fontWeight: 700, color: "#111827", marginBottom: "0.75rem" }}>
+              <div className="lt-why-icon">
+                <span style={{ fontSize: "1.4rem" }}>{group.icon}</span>
+              </div>
+              <div style={{ fontSize: "0.9rem", fontWeight: 700, color: "#111827", marginBottom: "0.5rem" }}>
                 {group.label}
               </div>
+              <p style={{ fontSize: "0.8rem", color: "#6B7280", lineHeight: 1.65, marginBottom: "1rem" }}>{group.desc}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                 {group.items.map((item) => (
                   <span key={item} className="lt-tech-tag">{item}</span>

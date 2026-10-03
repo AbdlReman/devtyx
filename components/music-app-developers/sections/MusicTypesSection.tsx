@@ -4,13 +4,16 @@ export default function MusicTypesSection() {
   return (
     <section className="lt-section">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 4rem" }}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "grid", gap: "2rem", alignItems: "end", marginBottom: "4rem" }}
+          className="lt-split-heading">
+          <div>
             <div className="lt-kicker">What We Build</div>
+            <h2 className="lt-h2" style={{ margin: 0 }}>Every kind of music app, covered.</h2>
           </div>
-          <h2 className="lt-h2">Every kind of music app, covered.</h2>
-          <p className="lt-lead">
-            Whatever you&apos;re imagining — streaming, learning, creation or distribution — we&apos;ve likely built something close to it.
+          <p className="lt-lead" style={{ margin: 0 }}>
+            Music apps are not one category. Streaming, live events, creator tools and podcast
+            platforms all serve different users, monetization models and technical requirements.
+            Whatever you&apos;re imagining, we&apos;ve likely built something close to it.
           </p>
         </div>
 

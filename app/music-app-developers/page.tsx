@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import MusicAppDevelopersContent from "@/components/music-app-developers/MusicAppDevelopersContent";
 import { faqCategories } from "@/components/music-app-developers/data/music-app-developers-data";
+import { getAllBlogPosts } from "@/lib/models/blog";
 import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
@@ -12,13 +13,20 @@ export const metadata: Metadata = buildMetadata({
   keywords: ["music app development", "music streaming app developers", "podcast app development", "music app developers"],
 });
 
-export default function MusicAppDevelopersPage() {
+const RELATED_KEYWORDS = ["music", "spotify", "podcast", "karaoke", "radio", "streaming"];
+
+export default async function MusicAppDevelopersPage() {
   const allFaqs = faqCategories.flatMap((cat) => cat.items);
+  const allPosts = await getAllBlogPosts().catch(() => []);
+  const relatedPosts = allPosts.filter((post) =>
+    RELATED_KEYWORDS.some((kw) => post.slug.includes(kw) || post.title.toLowerCase().includes(kw))
+  );
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Music App Developers", path: "/music-app-developers" }])} />
       <JsonLd data={faqJsonLd(allFaqs)} />
-      <MusicAppDevelopersContent />
+      <MusicAppDevelopersContent relatedPosts={relatedPosts} />
     </>
   );
 }

@@ -5,6 +5,27 @@ export const trustStats = [
   { num: "98%", label: "Client Satisfaction" },
 ];
 
+export const statHighlights = [
+  { icon: "🚀", num: "70+", label: "Products Delivered", desc: "Web, mobile, cloud and AI products shipped across streaming, fintech and more." },
+  { icon: "🤝", num: "120+", label: "Clients Served", desc: "Long-term partnerships built on reliable delivery and clear communication." },
+  { icon: "🌍", num: "23+", label: "Countries Reached", desc: "Supporting teams, labels and listeners across time zones worldwide." },
+  { icon: "⭐", num: "98%", label: "Client Satisfaction", desc: "Measured by repeat engagements and referrals from past clients." },
+];
+
+export const capabilityHighlights = [
+  { step: "01", title: "Audio Streaming Optimization", desc: "Adaptive bitrate, buffering strategy and caching tuned for consistent audio quality across devices and network conditions." },
+  { step: "02", title: "Playlist & Content Management", desc: "Flexible playlist tools for listeners, paired with an admin and catalog system that keeps content organized at scale." },
+  { step: "03", title: "Multi-Platform Compatibility", desc: "The same experience across mobile, web and desktop, so listeners never lose their place switching devices." },
+];
+
+export const comparisonTable = [
+  { type: "Music Streaming Platform", user: "Listeners / subscribers", monetization: "Subscriptions, ads, freemium", tech: "CDN + DRM + recommendation engine", complexity: "High" },
+  { type: "Live Audio / Concert App", user: "Event attendees, fans", monetization: "Ticketing, tips, pay-per-view", tech: "WebRTC, real-time audio, low latency", complexity: "High" },
+  { type: "Music Creation / DAW Tool", user: "Artists, producers", monetization: "In-app purchases, SaaS", tech: "Audio engine, low-latency recording, file export", complexity: "Very High" },
+  { type: "Podcast & Audio Platform", user: "Podcast listeners", monetization: "Subscriptions, dynamic ads, premium", tech: "RSS + VAST + episode management", complexity: "Medium" },
+  { type: "Karaoke & Social Music App", user: "Casual singers, fans", monetization: "VIP subscriptions, song packs", tech: "Synced lyrics, pitch scoring, recording", complexity: "High" },
+];
+
 export const musicAppTypes = [
   { icon: "🎧", title: "Music Streaming Apps", desc: "Spotify-style on-demand streaming with playlists, search and offline mode." },
   { icon: "🎙️", title: "Podcast & Audio Apps", desc: "Episodes, subscriptions, chapters and playback speed controls." },
@@ -138,13 +159,13 @@ export const processSteps = [
 ];
 
 export const techStack = [
-  { label: "Mobile", items: ["Swift", "Kotlin", "Flutter", "React Native"] },
-  { label: "Web", items: ["Next.js", "React", "Node.js"] },
-  { label: "Audio", items: ["ExoPlayer", "AVFoundation", "HLS", "DASH", "FFmpeg", "Web Audio API"] },
-  { label: "Cloud", items: ["AWS (S3, CloudFront, MediaConvert)", "Google Cloud", "Azure"] },
-  { label: "Database", items: ["PostgreSQL", "MongoDB", "Redis", "Firebase"] },
-  { label: "AI", items: ["TensorFlow", "PyTorch", "OpenAI", "Recommendation Engines"] },
-  { label: "Payments", items: ["Stripe", "PayPal", "Apple Pay", "Google Pay", "In-App Billing"] },
+  { icon: "📱", label: "Mobile", desc: "Native and cross-platform frameworks for iOS and Android.", items: ["Swift", "Kotlin", "Flutter", "React Native"] },
+  { icon: "🌐", label: "Web", desc: "Web players and admin dashboards that share logic with the mobile apps.", items: ["Next.js", "React", "Node.js"] },
+  { icon: "🔊", label: "Audio Engines", desc: "Dedicated audio libraries handling codec negotiation, buffering and adaptive streaming.", items: ["ExoPlayer", "AVFoundation", "HLS", "DASH", "FFmpeg", "Web Audio API"] },
+  { icon: "☁️", label: "Cloud & CDN", desc: "Scalable storage, transcoding and edge delivery so tracks start fast anywhere.", items: ["AWS (S3, CloudFront, MediaConvert)", "Google Cloud", "Azure"] },
+  { icon: "🗄️", label: "Database", desc: "Catalog metadata, user libraries and caching layers built to scale.", items: ["PostgreSQL", "MongoDB", "Redis", "Firebase"] },
+  { icon: "🤖", label: "AI & Discovery", desc: "Recommendation engines and personalization models trained on listening behavior.", items: ["TensorFlow", "PyTorch", "OpenAI", "Recommendation Engines"] },
+  { icon: "💳", label: "Payments", desc: "Subscriptions, in-app purchases and billing across every platform.", items: ["Stripe", "PayPal", "Apple Pay", "Google Pay", "In-App Billing"] },
 ];
 
 export const audience = [
