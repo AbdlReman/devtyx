@@ -14,7 +14,7 @@ export default function ConsultHeroSection() {
         <h1 className="hero-p-h1">
           Mobile App Consulting Services
         </h1>
-        <p className="hero-p-sub">
+        <p className="hero-p-sub" style={{ maxWidth: "680px" }}>
           Have an app idea but not sure where to start? DEVTYX mobile app development consulting gives
           you a clear strategy, the right technology and a realistic budget before you write a single
           line of code, so your app launches faster and costs less.

@@ -16,7 +16,7 @@ export default function HybridHeroSection() {
         <h1 className="hero-p-h1">
           One Codebase.<br />Every Platform.
         </h1>
-        <p className="hero-p-sub">
+        <p className="hero-p-sub" style={{ maxWidth: "680px" }} >
           DEVTYX is a hybrid mobile app development company building iOS, Android and web apps from a
           single Flutter or React Native codebase. Whether you need a hybrid app development company in
           the USA, a United States-based team, or a remote partner anywhere else, we deliver hybrid mobile
