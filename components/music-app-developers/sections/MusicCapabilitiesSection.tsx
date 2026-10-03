@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { capabilityHighlights } from "../data/music-app-developers-data";
 
 export default function MusicCapabilitiesSection() {
@@ -6,22 +7,13 @@ export default function MusicCapabilitiesSection() {
       <div className="brelyx-container">
         <div style={{ display: "grid", gap: "3rem", gridTemplateColumns: "1fr 1.1fr", alignItems: "center" }}
           className="lt-split-heading">
-          <div style={{ position: "relative", aspectRatio: "4/3", borderRadius: "1.5rem", overflow: "hidden", background: "#F0FBFF", border: "1px solid #E5E7EB" }}>
-            <div className="pointer-events-none absolute inset-0" style={{
-              backgroundImage: "radial-gradient(circle at 30% 30%, rgba(108,76,255,0.12) 0%, transparent 45%), radial-gradient(circle at 75% 70%, rgba(63,224,208,0.18) 0%, transparent 40%)",
-            }} />
-            <div style={{
-              position: "absolute", inset: "1.5rem",
-              borderRadius: "1.1rem",
-              background: "#FFFFFF",
-              border: "1px solid #E5E7EB",
-              boxShadow: "0 20px 50px rgba(108,76,255,0.12)",
-              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-              gap: "0.6rem",
-            }}>
-              <span style={{ fontSize: "2.75rem" }}>🎚️</span>
-              <span style={{ color: "#111827", fontWeight: 700, fontSize: "0.9rem" }}>Built for advanced capabilities</span>
-            </div>
+          <div style={{ position: "relative", aspectRatio: "16/10", borderRadius: "1.5rem", overflow: "hidden", border: "1px solid #E5E7EB", boxShadow: "0 20px 50px rgba(108,76,255,0.12)" }}>
+            <Image
+              src="/images/music-landing-images/built-for-advanced-capabilities.jpg"
+              alt="DEVTYX music app capabilities — AI DJ, Hi-Res Lossless, Spatial Audio, Live Listening Rooms, Voice Control, Multi-Device Sync"
+              fill
+              className="object-cover object-center"
+            />
           </div>
 
           <div>
