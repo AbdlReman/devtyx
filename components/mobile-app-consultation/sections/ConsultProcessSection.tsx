@@ -12,12 +12,14 @@ export default function ConsultProcessSection() {
           <h2 className="lt-h2">How Our Mobile App Consulting Works</h2>
         </div>
 
-        <div style={{ position: "relative", aspectRatio: "16/10", borderRadius: "1.5rem", overflow: "hidden", border: "1px solid #E5E7EB", boxShadow: "0 20px 50px rgba(108,76,255,0.12)", marginBottom: "3rem" }}>
+        <div style={{ borderRadius: "1.5rem", overflow: "hidden", border: "1px solid #E5E7EB", boxShadow: "0 20px 50px rgba(108,76,255,0.12)", marginBottom: "3rem" }}>
           <Image
             src="/images/app-consultation-images/04-how-consulting-works.webp"
             alt="DEVTYX mobile app consulting process: free consultation, discovery, research, planning, blueprint and next steps"
-            fill
-            className="object-cover object-center"
+            width={3200}
+            height={1640}
+            className="object-contain"
+            style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
 
