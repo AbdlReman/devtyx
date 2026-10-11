@@ -32,6 +32,7 @@ const serviceLinks: ServiceNavItem[] = [
       { label: "Native App", href: "/native-app-development" },
       { label: "Music App", href: "/music-app-developers" },
       { label: "Mobile App Consultation", href: "/mobile-app-consultation" },
+      { label: "App for Startups", href: "/app-development-for-startups" },
     ],
   },
   { label: "Data & AI", href: "/services/data-ai" },

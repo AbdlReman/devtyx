@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/hybrid-app-development",
     "/native-app-development",
     "/mobile-app-consultation",
+    "/app-development-for-startups",
     "/privacy-policy",
     "/terms-of-service",
     "/refund-policy",
