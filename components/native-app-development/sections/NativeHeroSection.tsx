@@ -19,7 +19,7 @@ export default function NativeHeroSection() {
           {/* ── Copy ─────────────────────────────────────────── */}
           <div>
             <div className="hero-p-badge" style={{ margin: "0 0 2rem" }}>● Native Mobile App Development</div>
-            <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none" }}>
+            <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none", fontSize: "clamp(2.1rem, 4.2vw, 3.4rem)" }}>
               Native Mobile App<br />Development Services
             </h1>
             <p className="hero-p-sub" style={{ margin: "0 0 2.25rem", maxWidth: "560px" }}>

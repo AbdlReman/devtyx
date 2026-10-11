@@ -19,7 +19,7 @@ export default function StartupHeroSection() {
           {/* ── Copy ─────────────────────────────────────────── */}
           <div>
             <div className="hero-p-badge" style={{ margin: "0 0 2rem" }}>● App Development for Startups</div>
-            <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none" }}>
+            <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none", fontSize: "clamp(1.9rem, 3.8vw, 3rem)" }}>
               App Development for Startups:<br />From Idea to MVP to Scale
             </h1>
             <p className="hero-p-sub" style={{ margin: "0 0 2.25rem", maxWidth: "560px" }}>
