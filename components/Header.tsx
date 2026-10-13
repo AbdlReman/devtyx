@@ -48,6 +48,7 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [servicesSubOpen, setServicesSubOpen] = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -96,22 +97,44 @@ export default function Header() {
                 </button>
                 {mobileServicesOpen && (
                   <div className="brelyx-mobile-nav-submenu">
-                    {serviceLinks.map((item) => (
-                      <div key={item.href} className="brelyx-mobile-nav-subgroup">
-                        <Link href={item.href} className="brelyx-mobile-nav-subrow" onClick={() => setMenuOpen(false)}>
-                          {item.label}
-                        </Link>
-                        {item.subItems && (
-                          <div className="brelyx-mobile-nav-subitems">
-                            {item.subItems.map((sub) => (
-                              <Link key={sub.href} href={sub.href} className="brelyx-mobile-nav-subitem" onClick={() => setMenuOpen(false)}>
-                                {sub.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                    {serviceLinks.map((item) =>
+                      item.subItems ? (
+                        <div key={item.href} className="brelyx-mobile-nav-subgroup">
+                          <button
+                            type="button"
+                            className="brelyx-mobile-nav-subrow brelyx-mobile-nav-subrow-toggle"
+                            onClick={() => setMobileSubOpen((open) => (open === item.href ? null : item.href))}
+                            aria-expanded={mobileSubOpen === item.href}
+                          >
+                            {item.label}
+                            <svg
+                              width="12"
+                              height="12"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              style={{ transform: mobileSubOpen === item.href ? "rotate(180deg)" : "none", transition: "transform 0.2s", flexShrink: 0 }}
+                            >
+                              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </button>
+                          {mobileSubOpen === item.href && (
+                            <div className="brelyx-mobile-nav-subitems">
+                              {item.subItems.map((sub) => (
+                                <Link key={sub.href} href={sub.href} className="brelyx-mobile-nav-subitem" onClick={() => setMenuOpen(false)}>
+                                  {sub.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div key={item.href} className="brelyx-mobile-nav-subgroup">
+                          <Link href={item.href} className="brelyx-mobile-nav-subrow" onClick={() => setMenuOpen(false)}>
+                            {item.label}
+                          </Link>
+                        </div>
+                      )
+                    )}
                     <Link href="/services" className="brelyx-mobile-nav-subrow brelyx-mobile-nav-services-all" onClick={() => setMenuOpen(false)}>
                       All Services →
                     </Link>

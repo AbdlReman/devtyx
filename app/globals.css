@@ -2211,12 +2211,23 @@ body {
 }
 .brelyx-mobile-nav-subrow {
   display: block;
+  width: 100%;
   padding: 0.7rem 0.25rem 0.7rem 1rem;
   font-size: 0.92rem;
   font-weight: 600;
   color: rgba(245,247,255,0.65);
+  text-align: left;
 }
 .brelyx-mobile-nav-subrow:hover { color: #ffffff; }
+.brelyx-mobile-nav-subrow-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.brelyx-mobile-nav-subrow-toggle svg { color: rgba(245,247,255,0.5); }
 .brelyx-mobile-nav-subitems {
   display: flex;
   flex-direction: column;
