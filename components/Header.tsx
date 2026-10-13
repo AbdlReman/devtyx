@@ -75,63 +75,64 @@ export default function Header() {
           </button>
 
           <div className="brelyx-mobile-nav-scroll">
-            <div className="brelyx-mobile-nav-services-wrap">
-              <button
-                type="button"
-                className="brelyx-mobile-nav-services-toggle"
-                onClick={() => setMobileServicesOpen((open) => !open)}
-                aria-expanded={mobileServicesOpen}
-              >
-                Services
-                <svg
-                  width="16"
-                  height="16"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  style={{ transform: mobileServicesOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s", flexShrink: 0 }}
+            <div className="brelyx-mobile-nav-list">
+              <div className="brelyx-mobile-nav-item">
+                <button
+                  type="button"
+                  className="brelyx-mobile-nav-row brelyx-mobile-nav-row-toggle"
+                  onClick={() => setMobileServicesOpen((open) => !open)}
+                  aria-expanded={mobileServicesOpen}
                 >
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              {mobileServicesOpen && (
-                <div className="brelyx-mobile-nav-services">
-                  {serviceLinks.map((item) => (
-                    <div key={item.href} className="brelyx-mobile-nav-service-group">
-                      <Link href={item.href} onClick={() => setMenuOpen(false)}>
-                        {item.label}
-                      </Link>
-                      {item.subItems && (
-                        <div className="brelyx-mobile-nav-subitems">
-                          {item.subItems.map((sub) => (
-                            <Link key={sub.href} href={sub.href} onClick={() => setMenuOpen(false)}>
-                              {sub.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                  <Link href="/services" className="brelyx-mobile-nav-services-all" onClick={() => setMenuOpen(false)}>
-                    All Services →
-                  </Link>
-                </div>
-              )}
-            </div>
+                  Services
+                  <svg
+                    width="14"
+                    height="14"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    style={{ transform: mobileServicesOpen ? "rotate(180deg)" : "none", transition: "transform 0.2s", flexShrink: 0 }}
+                  >
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                {mobileServicesOpen && (
+                  <div className="brelyx-mobile-nav-submenu">
+                    {serviceLinks.map((item) => (
+                      <div key={item.href} className="brelyx-mobile-nav-subgroup">
+                        <Link href={item.href} className="brelyx-mobile-nav-subrow" onClick={() => setMenuOpen(false)}>
+                          {item.label}
+                        </Link>
+                        {item.subItems && (
+                          <div className="brelyx-mobile-nav-subitems">
+                            {item.subItems.map((sub) => (
+                              <Link key={sub.href} href={sub.href} className="brelyx-mobile-nav-subitem" onClick={() => setMenuOpen(false)}>
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                    <Link href="/services" className="brelyx-mobile-nav-subrow brelyx-mobile-nav-services-all" onClick={() => setMenuOpen(false)}>
+                      All Services →
+                    </Link>
+                  </div>
+                )}
+              </div>
 
-            <div className="brelyx-mobile-nav-links">
               {navLinks.map(([label, href]) => (
-                <Link key={label} href={href} onClick={() => setMenuOpen(false)}>
+                <Link key={label} href={href} className="brelyx-mobile-nav-row" onClick={() => setMenuOpen(false)}>
                   {label}
                 </Link>
               ))}
               {session?.user?.role === "admin" && (
-                <Link href="/admin" onClick={() => setMenuOpen(false)}>
+                <Link href="/admin" className="brelyx-mobile-nav-row" onClick={() => setMenuOpen(false)}>
                   Admin
                 </Link>
               )}
               {session ? (
                 <Link
                   href="#"
+                  className="brelyx-mobile-nav-row"
                   onClick={(e) => {
                     e.preventDefault();
                     setMenuOpen(false);
@@ -141,7 +142,7 @@ export default function Header() {
                   Logout
                 </Link>
               ) : (
-                <Link href="/login" onClick={() => setMenuOpen(false)}>
+                <Link href="/login" className="brelyx-mobile-nav-row" onClick={() => setMenuOpen(false)}>
                   Login
                 </Link>
               )}

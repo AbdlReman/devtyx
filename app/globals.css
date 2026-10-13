@@ -2160,87 +2160,76 @@ body {
 .brelyx-mobile-nav-scroll {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   width: 100%;
+  max-width: 400px;
   margin: 0 auto;
 }
 
-.brelyx-mobile-nav-links {
+/* Accordion-style list: full-width rows separated by hairlines, label on the
+   left and a chevron on the right for expandable items — matches a standard
+   mobile nav dropdown pattern instead of a centered word list. */
+.brelyx-mobile-nav-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-.brelyx-mobile-nav-links a {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: rgba(245,247,255,0.6);
-}
-.brelyx-mobile-nav-links a:hover { color: #ffffff; }
-
-/* Services accordion: a distinct, left-aligned card rather than words mixed
-   into the centered nav list — keeps it legible once sub-items expand. */
-.brelyx-mobile-nav-services-wrap {
   width: 100%;
-  max-width: 320px;
-  border-radius: 1rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(255,255,255,0.03);
-  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
-.brelyx-mobile-nav-services-toggle {
+.brelyx-mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.brelyx-mobile-nav-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 1rem 1.25rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.brelyx-mobile-nav-services {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  padding: 0 1.25rem 1.25rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 1.1rem;
-}
-.brelyx-mobile-nav-service-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
-}
-.brelyx-mobile-nav-services > .brelyx-mobile-nav-service-group > a {
-  font-size: 0.95rem;
+  padding: 1rem 0.25rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: rgba(245,247,255,0.85);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-align: left;
+  cursor: pointer;
 }
+.brelyx-mobile-nav-item .brelyx-mobile-nav-row { border-bottom: none; }
+.brelyx-mobile-nav-row:hover { color: #ffffff; }
+.brelyx-mobile-nav-row-toggle svg { color: rgba(245,247,255,0.6); }
+
+.brelyx-mobile-nav-submenu {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.75rem;
+}
+.brelyx-mobile-nav-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+.brelyx-mobile-nav-subrow {
+  display: block;
+  padding: 0.7rem 0.25rem 0.7rem 1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(245,247,255,0.65);
+}
+.brelyx-mobile-nav-subrow:hover { color: #ffffff; }
 .brelyx-mobile-nav-subitems {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-left: 0.9rem;
-  border-left: 1px solid rgba(255,255,255,0.1);
 }
 .brelyx-mobile-nav-subitems a {
-  font-size: 0.82rem;
+  display: block;
+  padding: 0.6rem 0.25rem 0.6rem 1.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: rgba(245,247,255,0.5);
 }
-.brelyx-mobile-nav-subitems a:hover,
-.brelyx-mobile-nav-services > .brelyx-mobile-nav-service-group > a:hover { color: #ffffff; }
+.brelyx-mobile-nav-subitems a:hover { color: #ffffff; }
 .brelyx-mobile-nav-services-all {
-  display: block;
-  margin-top: 0.25rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-size: 0.85rem;
-  font-weight: 700;
   color: #3FE0D0;
 }
 
