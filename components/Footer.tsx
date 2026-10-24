@@ -2,21 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 const socialIcons: Record<string, React.ReactNode> = {
-  x: (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  ),
-  yt: (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M23.498 6.186a2.994 2.994 0 00-2.107-2.117C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.391.524A2.994 2.994 0 00.502 6.186 31.32 31.32 0 000 12a31.32 31.32 0 00.502 5.814 2.994 2.994 0 002.107 2.117c1.886.524 9.391.524 9.391.524s7.505 0 9.391-.524a2.994 2.994 0 002.107-2.117A31.32 31.32 0 0024 12a31.32 31.32 0 00-.502-5.814zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z" />
-    </svg>
-  ),
   ig: (
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" strokeWidth="1.8" />
       <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
       <circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" />
+    </svg>
+  ),
+  fb: (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+    </svg>
+  ),
+  li: (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
   ),
   wa: (
@@ -41,11 +41,9 @@ export default function Footer() {
             </p>
             <div className="footer-socials">
               {([
-               
-                ["x", "X (Twitter)", "https://x.com/"],
-                // ["gh", "GitHub", "#"],
-                ["yt", "YouTube", "https://www.youtube.com/@"],
-                ["ig", "Instagram", "https://www.instagram.com//"],
+                ["ig", "Instagram", "https://www.instagram.com/thedevtyx/"],
+                ["fb", "Facebook", "https://www.facebook.com/devtyx/"],
+                ["li", "LinkedIn", "https://www.linkedin.com/company/devtyx"],
                 ["wa", "WhatsApp", "https://wa.me/923020058237"],
               ] as [string, string, string][]).map(([label, title, href]) => {
                 const external = href !== "#";
