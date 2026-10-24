@@ -28,7 +28,7 @@ export const whyChoose = [
 export const industries = [
   { title: "Fintech and Banking Apps", desc: "Plan secure payment, wallet and banking apps with multi-factor authentication, fraud controls and PCI DSS requirements in mind." },
   { title: "Healthcare and Pharma Apps", desc: "Plan patient, telehealth and wellness apps that protect sensitive health data and are designed with HIPAA requirements in mind." },
-  { title: "E-commerce and Retail Apps", desc: "Plan shopping apps with fast catalogs, secure checkout, inventory sync and loyalty features that bring customers back." },
+  { title: "E-commerce and Retail Apps", desc: "Plan shopping apps with fast catalogs, secure checkout, inventory sync and loyalty features that bring customers back.", link: { label: "Grocery App Development", href: "/grocery-app-development" } },
   { title: "Travel and Hospitality Apps", desc: "Plan booking, itinerary and guest-experience apps with real-time availability, payments and offline access." },
   { title: "Education and e-Learning Apps", desc: "Plan learning apps for students, teachers and institutions, with courses, progress tracking and live classes." },
   { title: "Real Estate Apps", desc: "Plan property listing, search and agent apps with maps, virtual tours and lead management." },
