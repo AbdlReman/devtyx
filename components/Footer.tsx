@@ -87,7 +87,7 @@ export default function Footer() {
                 ["About Us", "/about"],
                 ["Blog", "/blog"],
                 ["Portfolio", "/portfolio"],
-                ["Industries", "/#industries"],
+                // ["Industries", "/#industries"],
                 ["Contact", "/contact"],
                 ["Privacy Policy", "/privacy-policy"],
               ] as [string, string][]).map(([label, href]) => (

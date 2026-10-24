@@ -8,7 +8,7 @@ import HomeCaseStudiesSection from "./sections/HomeCaseStudiesSection";
 import HomeCtaSection from "./sections/HomeCtaSection";
 import HomeFaqSection from "./sections/HomeFaqSection";
 import HomeHeroSection from "./sections/HomeHeroSection";
-import HomeIndustriesSection from "./sections/HomeIndustriesSection";
+// import HomeIndustriesSection from "./sections/HomeIndustriesSection";
 import HomeServicesSection from "./sections/HomeServicesSection";
 import HomeStatsSection from "./sections/HomeStatsSection";
 import HomeTestimonialsSection from "./sections/HomeTestimonialsSection";
@@ -35,7 +35,7 @@ export default function HomeContent({ projects, posts }: { projects: Project[]; 
         {/* 8. Stats strip (purple numbers) */}
         <HomeStatsSection />
         {/* 9. Industries */}
-        <HomeIndustriesSection />
+        {/* <HomeIndustriesSection /> */}
         {/* 10. Blog / News */}
         <HomeBlogSection posts={posts} />
         {/* 11. CTA Banner (repeat) */}
