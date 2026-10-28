@@ -1,3 +1,4 @@
+import Image from "next/image";
 import QuickInquiryButton from "@/components/contact/QuickInquiryButton";
 import { whyChooseReasons } from "../data/salon-app-development-data";
 
@@ -17,7 +18,34 @@ export default function SalonWhyChooseSection() {
         </div>
 
         <div
-          style={{ display: "grid", gap: "1.25rem", gridTemplateColumns: "repeat(1, minmax(0,1fr))", maxWidth: "860px", margin: "0 auto" }}
+          style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "16/10",
+            borderRadius: "1.5rem",
+            overflow: "hidden",
+            border: "1px solid #E5E7EB",
+            boxShadow: "0 20px 50px rgba(108,76,255,0.12)",
+            marginBottom: "3rem",
+          }}
+        >
+          <Image
+            src="/images/salon-app/Multi-device-verview.jpg"
+            alt="Custom salon booking app across client, stylist, and admin devices by Devtyx"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gap: "1.25rem",
+            gridTemplateColumns: "repeat(1, minmax(0,1fr))",
+            maxWidth: "860px",
+            margin: "0 auto",
+          }}
         >
           {whyChooseReasons.map((item, i) => (
             <div
