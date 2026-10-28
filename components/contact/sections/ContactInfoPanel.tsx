@@ -44,7 +44,7 @@ const infoCards = [
 ];
 
 const offices = [
-  { city: "3217 Blackstone Run, Lawrenceville, GA 30043", detail: "Head Office" },
+  { city: "Al-Rehman Chamber, Blue Area, Islamabad, 44000", detail: "Head Office" },
 ] as const;
 
 export default function ContactInfoPanel() {

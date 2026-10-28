@@ -119,7 +119,9 @@ export default function Footer() {
                   <path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
                   <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
-                <span className="footer-contact-text">3217 Blackstone Run, Lawrenceville, GA 30043</span>
+                <span className="footer-contact-text">
+                  Al-Rehman Chamber, Blue Area, Islamabad, 44000
+                </span>
               </li>
             </ul>
             <Link href="/contact" className="lt-btn" style={{ fontSize: "0.82rem", padding: "0.7rem 1.25rem", justifyContent: "center" }}>
