@@ -85,6 +85,7 @@ export default function Footer() {
             <ul className="footer-list">
               {([
                 ["About Us", "/about"],
+                ["Reviews", "/reviews"],
                 ["Blog", "/blog"],
                 ["Portfolio", "/portfolio"],
                 // ["Industries", "/#industries"],

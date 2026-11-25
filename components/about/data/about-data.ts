@@ -30,7 +30,7 @@ export const testimonials = [
   },
 ];
 
-export const googleReviewsUrl = "https://share.google/OMoJaSHgxtch9t3Ie";
+export const googleReviewsUrl = "https://share.google/YXNa66innciS5gbF2";
 
 export const aboutStoryHighlights: [string, string][] = [
   ["Remote-first", "Teams across 23+ countries"],
