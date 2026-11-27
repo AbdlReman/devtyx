@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: "/portfolio/matrimonial",
         permanent: true,
       },
+      {
+        source: "/services/enterprise-app-development",
+        destination: "/enterprise-app-development",
+        permanent: true,
+      },
     ];
   },
   async headers() {

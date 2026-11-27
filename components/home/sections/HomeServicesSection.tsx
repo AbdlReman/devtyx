@@ -48,7 +48,7 @@ export default function HomeServicesSection() {
             className="lt-lead lt-center"
             style={{ maxWidth: "520px", margin: "0 auto 1.5rem", fontSize: "0.95rem" }}
           >
-            Explore our specialized mobile offerings:
+            Explore our specialized offerings:
           </p>
           <div
             style={{

@@ -127,17 +127,17 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── Specialized mobile solutions ───────────────────── */}
+        {/* ── Specialized solutions ──────────────────────────── */}
         <section className="lt-section">
           <div className="brelyx-container">
             <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                <div className="lt-kicker">Mobile Solutions</div>
+                <div className="lt-kicker">Specialized Solutions</div>
               </div>
               <h2 className="lt-h2">Specialized app development pages</h2>
               <p className="lt-lead">
-                Deep-dive into the product types we ship most often — from hybrid and native builds
-                to grocery, salon, music, and startup MVPs.
+                Deep-dive into the product types we ship most often — enterprise platforms, hybrid and
+                native builds, grocery, salon, music, and startup MVPs.
               </p>
             </div>
             <div

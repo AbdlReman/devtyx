@@ -28,6 +28,7 @@ const serviceLinks: ServiceNavItem[] = [
     label: "Mobile & Experience",
     href: "/services/mobile-experience",
     subItems: [
+      { label: "Enterprise App", href: "/enterprise-app-development" },
       { label: "Hybrid App", href: "/hybrid-app-development" },
       { label: "Native App", href: "/native-app-development" },
       { label: "Music App", href: "/music-app-developers" },

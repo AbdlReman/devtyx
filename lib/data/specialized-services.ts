@@ -1,5 +1,10 @@
-/** Landing pages for specialized mobile offerings — keep in sync with Header serviceLinks. */
+/** Landing pages for specialized offerings — keep in sync with Header serviceLinks. */
 export const specializedServices = [
+  {
+    label: "Enterprise App Development",
+    href: "/enterprise-app-development",
+    blurb: "Secure, scalable web, mobile, cloud and AI apps that integrate with your systems.",
+  },
   {
     label: "Hybrid App Development",
     href: "/hybrid-app-development",
