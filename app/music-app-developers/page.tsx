@@ -6,7 +6,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Music App Developers",
+  title: "Music App Developers — Streaming & Creator Platforms",
   description:
     "DEVTYX designs, builds and scales music apps — streaming, podcast, fan, learning, karaoke, DJ and more — for iOS, Android and web.",
   path: "/music-app-developers",

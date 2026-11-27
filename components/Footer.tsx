@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { specializedServices } from "@/lib/data/specialized-services";
+import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE } from "@/lib/seo";
 
 const socialIcons: Record<string, React.ReactNode> = {
   ig: (
@@ -66,15 +68,20 @@ export default function Footer() {
           <div className="footer-col">
             <p className="footer-heading">Services</p>
             <ul className="footer-list">
-              {[
-                "Web & Custom Software",
-                "Mobile & Experience",
-                "Cloud, DevOps & Security",
-                "Data & AI",
-                "UI/UX Design",
-                "Digital Strategy & Product Consulting",
-              ].map((s) => (
-                <li key={s}><Link href="/#services" className="brelyx-footer-link">{s}</Link></li>
+              {([
+                ["Web & Custom Software", "/services/web-custom-software"],
+                ["Mobile & Experience", "/services/mobile-experience"],
+                ["Data & AI", "/services/data-ai"],
+                ["Cloud, DevOps & Security", "/services/cloud-devops-security"],
+                ["UI/UX Design", "/services/ui-ux-design"],
+                ["Digital Strategy", "/services/digital-strategy-consulting"],
+              ] as [string, string][]).map(([label, href]) => (
+                <li key={label}><Link href={href} className="brelyx-footer-link">{label}</Link></li>
+              ))}
+              {specializedServices.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="brelyx-footer-link">{s.label}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -88,7 +95,6 @@ export default function Footer() {
                 ["Reviews", "/reviews"],
                 ["Blog", "/blog"],
                 ["Portfolio", "/portfolio"],
-                // ["Industries", "/#industries"],
                 ["Contact", "/contact"],
                 ["Privacy Policy", "/privacy-policy"],
               ] as [string, string][]).map(([label, href]) => (
@@ -96,7 +102,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
 
           {/* Contact */}
           <div className="footer-col">
@@ -107,13 +112,13 @@ export default function Footer() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="1.8" />
                   <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
-                <span className="footer-contact-text">support@devtyx.com</span>
+                <span className="footer-contact-text">{BUSINESS_EMAIL}</span>
               </li>
               <li className="footer-contact-row">
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="footer-contact-icon">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
-                <span className="footer-contact-text">+92-302-005-8237</span>
+                <span className="footer-contact-text">{BUSINESS_PHONE}</span>
               </li>
               <li className="footer-contact-row">
                 <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="footer-contact-icon">
@@ -121,7 +126,7 @@ export default function Footer() {
                   <circle cx="12" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.8" />
                 </svg>
                 <span className="footer-contact-text">
-                  Al-Rehman Chamber, Blue Area, Islamabad, 44000
+                  {BUSINESS_ADDRESS.formatted}
                 </span>
               </li>
             </ul>

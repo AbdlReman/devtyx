@@ -6,7 +6,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Mobile App Consulting Services",
+  title: "Mobile App Consulting — Roadmap, Stack & Architecture",
   description:
     "DEVTYX mobile app development consulting gives you a clear strategy, the right technology and a realistic budget before you write a single line of code.",
   path: "/mobile-app-consultation",

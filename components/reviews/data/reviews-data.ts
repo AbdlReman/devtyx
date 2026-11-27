@@ -3,6 +3,7 @@ import { googleReviewsUrl } from "@/components/about/data/about-data";
 export { googleReviewsUrl };
 
 export const clutchProfileUrl = "https://clutch.co/profile/devtyx";
+export const goodFirmsProfileUrl = "https://www.goodfirms.co/company/devtyx";
 export const techBehemothsUrl = "https://techbehemoths.com/company/devtyx";
 
 export const reviewPlatforms = [
@@ -21,6 +22,14 @@ export const reviewPlatforms = [
     href: clutchProfileUrl,
     cta: "View Clutch profile",
     accent: "#FF3D2E",
+  },
+  {
+    id: "goodfirms",
+    name: "GoodFirms",
+    description: "See our GoodFirms company profile, services focus, and client ratings.",
+    href: goodFirmsProfileUrl,
+    cta: "View GoodFirms profile",
+    accent: "#2E7D32",
   },
   {
     id: "techbehemoths",

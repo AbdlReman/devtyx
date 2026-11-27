@@ -24,7 +24,8 @@ export default function GroceryHeroSection() {
             </div>
 
             <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none" }}>
-              We Build Grocery Apps<br />
+              We Build Grocery Apps{" "}
+              <br />
               <span className="hero-p-h1-gradient">That Get Orders to the Door</span>
             </h1>
 

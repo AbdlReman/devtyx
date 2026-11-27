@@ -41,6 +41,16 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   return docs.map(toBlogPost);
 }
 
+/** Listing cards only — omits heavy HTML `content` from the query projection. */
+export async function getBlogPostsListing(): Promise<BlogPost[]> {
+  const collection = await blogCollection();
+  const docs = await collection
+    .find({}, { projection: { content: 0 } })
+    .sort({ date: -1 })
+    .toArray();
+  return docs.map((doc) => toBlogPost({ ...doc, content: "" }));
+}
+
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
   const collection = await blogCollection();
   const doc = await collection.findOne({ slug });

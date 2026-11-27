@@ -22,6 +22,20 @@ function PlatformIcon({ id }: { id: string }) {
       </svg>
     );
   }
+  if (id === "goodfirms") {
+    return (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#2E7D32" />
+        <path
+          d="M7 12.2l2.4 2.4L17 7.8"
+          stroke="#fff"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
   return (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <rect width="24" height="24" rx="6" fill="#0EA5E9" />

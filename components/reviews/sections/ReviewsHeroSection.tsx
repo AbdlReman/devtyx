@@ -11,12 +11,12 @@ export default function ReviewsHeroSection() {
       <div className="brelyx-container" style={{ position: "relative" }}>
         <div className="hero-p-badge">● Client Reviews</div>
         <h1 className="hero-p-h1">
-          Trusted by clients
+          Trusted by clients{" "}
           <br />
           worldwide
         </h1>
         <p className="hero-p-sub">
-          Real feedback from teams we&apos;ve shipped with — on Google, Clutch, and TechBehemoths.
+          Real feedback from teams we&apos;ve shipped with — on Google, Clutch, GoodFirms, and TechBehemoths.
         </p>
       </div>
     </section>

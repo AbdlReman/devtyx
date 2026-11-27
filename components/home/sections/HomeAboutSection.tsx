@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeAboutSection() {
@@ -10,7 +10,9 @@ export default function HomeAboutSection() {
           <div>
             <div className="lt-kicker">Get Started</div>
             <h2 className="lt-h2" style={{ marginBottom: "1.25rem" }}>
-              Our Journey, Vision,<br />And Values
+              Our Journey, Vision,{" "}
+              <br />
+              And Values
             </h2>
             <p className="lt-lead" style={{ marginBottom: "1rem" }}>
               Since 2019, DEVTYX has been delivering digital products that combine deep technical

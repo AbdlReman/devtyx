@@ -20,7 +20,9 @@ export default function HybridHeroSection() {
           <div>
             <div className="hero-p-badge" style={{ margin: "0 0 2rem" }}>● Hybrid App Development</div>
             <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none" }}>
-              One Codebase.<br />Every Platform.
+              One Codebase.{" "}
+              <br />
+              Every Platform.
             </h1>
             <p className="hero-p-sub" style={{ margin: "0 0 2.25rem", maxWidth: "560px" }}>
               DEVTYX is a hybrid mobile app development company building iOS, Android and web apps from a

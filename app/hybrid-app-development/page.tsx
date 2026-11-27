@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Hybrid App Development",
+  title: "Hybrid App Development — Cross-Platform iOS & Android",
   description:
     "DEVTYX is a hybrid mobile app development company building cross-platform iOS, Android and web apps — plus mobile games — from one codebase, for clients in the USA and worldwide.",
   path: "/hybrid-app-development",

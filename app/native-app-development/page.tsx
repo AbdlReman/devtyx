@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Native Mobile App Development Services USA",
+  title: "Native Mobile App Development Services",
   description:
     "DEVTYX offers native mobile app development services for US businesses. iOS, Android & React Native apps built to scale. Book a free discovery call.",
   path: "/native-app-development",

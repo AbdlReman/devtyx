@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 export default function PortfolioHeroSection({ projectCount }: { projectCount: number }) {
   return (
@@ -12,7 +12,9 @@ export default function PortfolioHeroSection({ projectCount }: { projectCount: n
       <div className="brelyx-container" style={{ position: "relative" }}>
         <div className="hero-p-badge">● Our Portfolio</div>
         <h1 className="hero-p-h1">
-          Real projects.<br />Real results.
+          Real projects.{" "}
+          <br />
+          Real results.
         </h1>
         <p className="hero-p-sub">
           From e-commerce platforms and healthcare systems to matrimonial apps and content management tools —

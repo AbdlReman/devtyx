@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function AboutHeroSection() {
   return (
@@ -12,7 +12,9 @@ export default function AboutHeroSection() {
       <div className="brelyx-container" style={{ position: "relative" }}>
         <div className="hero-p-badge">● Who We Are</div>
         <h1 className="hero-p-h1">
-          Human-Centred.<br />Engineering-Led.
+          Human-Centred.{" "}
+          <br />
+          Engineering-Led.
         </h1>
         <p className="hero-p-sub">
           DEVTYX is a collective of strategists, designers, cloud architects, and full-stack engineers —

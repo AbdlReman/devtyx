@@ -4,7 +4,7 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Us",
+  title: "About DEVTYX — IT & Digital Transformation Partner",
   description:
     "Learn about DEVTYX — a collective of strategists, designers, cloud architects, and engineers delivering world-class digital products.",
   path: "/about",

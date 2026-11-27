@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/seo";
 import { getAllProjects } from "@/lib/models/project";
 import { getAllServices } from "@/lib/data/services";
 import { getAllBlogPosts } from "@/lib/models/blog";
+import { slugify } from "@/lib/slugify";
 
 // Without this, Next prerenders sitemap.xml once at build time and caches
 // it — projects/services/posts added afterward via the admin panel never
@@ -60,10 +61,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const services = getAllServices();
   const posts = postsResult.status === "fulfilled" ? postsResult.value : [];
 
-  const projectRoutes = uniqueSlugRoutes(projects, (project) => ({
-    url: `${SITE_URL}/portfolio/${project.slug}`,
-    lastModified: new Date(),
-  }));
+  const projectRoutes = uniqueSlugRoutes(
+    projects.map((project) => ({ ...project, slug: slugify(project.slug) })),
+    (project) => ({
+      url: `${SITE_URL}/portfolio/${project.slug}`,
+      lastModified: new Date(),
+    })
+  );
 
   const serviceRoutes = uniqueSlugRoutes(services, (service) => ({
     url: `${SITE_URL}/services/${service.slug}`,

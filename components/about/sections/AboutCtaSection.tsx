@@ -1,11 +1,13 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 export default function AboutCtaSection() {
   return (
     <div className="dark-cta-band">
       <div className="brelyx-container">
         <h2 className="dark-cta-h2">
-          Ready to work with a team<br />that delivers?
+          Ready to work with a team{" "}
+          <br />
+          that delivers?
         </h2>
         <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.97rem", lineHeight: 1.8, maxWidth: "480px", margin: "0 auto 2rem" }}>
           Let&apos;s discuss your project and build something exceptional together.

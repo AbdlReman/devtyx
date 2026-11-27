@@ -50,9 +50,19 @@ export async function getAllProjects(): Promise<Project[]> {
   return docs.map(toProject);
 }
 
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Case-insensitive slug lookup; returns the stored project (slug casing as saved). */
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
   const collection = await projectsCollection();
-  const doc = await collection.findOne({ slug });
+  const exact = await collection.findOne({ slug });
+  if (exact) return toProject(exact);
+
+  const doc = await collection.findOne({
+    slug: { $regex: new RegExp(`^${escapeRegex(slug)}$`, "i") },
+  });
   return doc ? toProject(doc) : null;
 }
 

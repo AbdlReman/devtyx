@@ -1,4 +1,4 @@
-﻿import { processSteps } from "../data/about-data";
+import { processSteps } from "../data/about-data";
 
 export default function AboutProcessSection() {
   return (
@@ -9,7 +9,11 @@ export default function AboutProcessSection() {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">How We Work</div>
           </div>
-          <h2 className="lt-h2">A proven process.<br />Predictable outcomes.</h2>
+          <h2 className="lt-h2">
+            A proven process.{" "}
+            <br />
+            Predictable outcomes.
+          </h2>
           <p className="lt-lead" style={{ maxWidth: "480px", margin: "1rem auto 0" }}>
             Our structured delivery model eliminates guesswork and keeps you in control from discovery to deployment.
           </p>

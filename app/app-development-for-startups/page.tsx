@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "App Development for Startups | MVP to Scale",
+  title: "App Development for Startups — MVP to Scale",
   description:
     "Mobile app development for startups, from idea validation and MVP to launch and growth. Fixed-price packages, fast kickoff and full code ownership. Talk to DEVTYX.",
   path: "/app-development-for-startups",

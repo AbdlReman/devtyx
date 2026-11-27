@@ -2,7 +2,7 @@
 import HomeContent from "@/components/home/HomeContent";
 import { buildMetadata } from "@/lib/seo";
 import { getAllProjects } from "@/lib/models/project";
-import { getAllBlogPosts } from "@/lib/models/blog";
+import { getBlogPostsListing } from "@/lib/models/blog";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +18,6 @@ export default async function Home() {
   // briefly unreachable, degrade to hiding the projects carousel instead of
   // taking the whole homepage down with it.
   const projects = await getAllProjects().catch(() => []);
-  const posts = await getAllBlogPosts().catch(() => []);
+  const posts = await getBlogPostsListing().catch(() => []);
   return <HomeContent projects={projects} posts={posts.slice(0, 3)} />;
 }

@@ -136,23 +136,23 @@ export const stats = [
 
 export const faqItems = [
   {
-    q: "How Does It Work?",
+    q: "How does engagement with DEVTYX work?",
     a: "We start with a discovery call to understand your goals, then move into scoping, design, and engineering. Most projects kick off within 2 weeks of our first conversation.",
   },
   {
-    q: "What Platforms Do You Advertise On?",
+    q: "Which platforms and channels do you cover?",
     a: "We build and market across web, iOS, Android, and enterprise platforms. Our digital strategy team also covers Google, Meta, LinkedIn, and programmatic channels.",
   },
   {
-    q: "What Is The Commission?",
+    q: "How is pricing structured?",
     a: "Our engagement models range from fixed-price projects to monthly retainers. We share detailed pricing after a discovery call to ensure the best fit for your needs and budget.",
   },
   {
-    q: "How Do We Start?",
-    a: "Simply reach out via our contact page or schedule a strategy call. We will respond within 24 hours to arrange a meeting with our solutions team.",
+    q: "How do we get started?",
+    a: "Reach out via our contact page or schedule a strategy call. We respond within 24 hours to arrange a meeting with our solutions team.",
   },
   {
-    q: "What Will Be The Revisions System?",
+    q: "How do revisions and feedback work?",
     a: "All projects include dedicated revision rounds. Our design sprints use iterative feedback loops, and engineering milestones include review periods built into the timeline.",
   },
 ];

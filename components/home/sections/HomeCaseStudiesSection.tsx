@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/models/project";
 import { isOptimizableImageSrc } from "@/lib/image";
+import { slugify } from "@/lib/slugify";
 
 const ACTORS_BY_CATEGORY: Record<string, string[]> = {
   Education: ["Student", "Teacher", "Admin"],
@@ -169,7 +170,7 @@ export default function HomeCaseStudiesSection({ projects }: { projects: Project
               </div>
 
               <div className="home-portfolio-cta">
-                <Link href={`/portfolio/${cs.slug}`} className="lt-btn home-portfolio-view-btn">
+                <Link href={`/portfolio/${slugify(cs.slug)}`} className="lt-btn home-portfolio-view-btn">
                   View Project
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path

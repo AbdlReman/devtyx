@@ -34,7 +34,7 @@ export default function ConsultCaseStudiesSection({ projects }: { projects: Proj
                     &ldquo;{project.highlight}&rdquo;
                   </p>
                 )}
-                <Link href={`/portfolio/${project.slug}`} className="lt-card-read" style={{ marginTop: "1rem" }}>
+                <Link href={`/portfolio/${project.slug.toLowerCase()}`} className="lt-card-read" style={{ marginTop: "1rem" }}>
                   View Case Study →
                 </Link>
               </div>

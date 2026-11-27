@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -44,7 +44,8 @@ export default function HomeHeroSection() {
 
         {/* Headline */}
         <h1 className="hero-p-h1">
-          We Craft Digital Products<br />
+          We Craft Digital Products{" "}
+          <br />
           <span className="hero-p-h1-gradient">That Scale</span>
         </h1>
 

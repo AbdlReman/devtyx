@@ -7,7 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Portfolio",
+  title: "Portfolio & Case Studies — Web, Mobile & AI Products",
   description:
     "Explore case studies and projects delivered by DEVTYX across web, mobile, cloud, and AI engineering.",
   path: "/portfolio",

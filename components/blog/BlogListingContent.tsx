@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import BlogCard from "./BlogCard";
 import type { BlogPost } from "@/lib/models/blog";
 
-const POSTS_PER_PAGE = 15;
+const POSTS_PER_PAGE = 9;
 
 export default function BlogListingContent({ posts }: { posts: BlogPost[] }) {
   const [page, setPage] = useState(1);

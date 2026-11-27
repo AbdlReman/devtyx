@@ -17,14 +17,13 @@ export default function HomeTestimonialsSection() {
 
           {/* Right — content */}
           <div>
-            <div className="lt-kicker">Creative Solutions</div>
+            <div className="lt-kicker">Client Partnership</div>
             <h2 className="lt-h2" style={{ marginBottom: "1.25rem" }}>
-              Clients Adore Our Support Staff, And You Will Too
+              Senior Support From Discovery to Launch
             </h2>
             <p className="lt-lead" style={{ marginBottom: "2rem" }}>
-              Best solutions for your business. We create ideas and educate for your problem and
-              more growth solutions. We offer a range of services to our clients tailored to help
-              them succeed.
+              We pair you with a dedicated team that communicates clearly, ships on schedule, and
+              stays accountable for outcomes — not just tickets closed.
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>

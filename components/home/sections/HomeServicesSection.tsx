@@ -1,25 +1,28 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
+import { specializedServices } from "@/lib/data/specialized-services";
 import { services } from "../data/home-data";
 
 export default function HomeServicesSection() {
   const featured = services.slice(0, 3);
 
   return (
-    <section className="lt-section-alt">
+    <section id="services" className="lt-section-alt">
       <div className="brelyx-container">
         {/* Centered header */}
         <div className="lt-svc-header">
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <div className="lt-kicker">Design Services</div>
+            <div className="lt-kicker">What We Build</div>
           </div>
           <h2 className="lt-h2 lt-center" style={{ marginBottom: "1rem" }}>
-            We Offer A Wide Range Of<br />Design Services
+            End-to-End Digital Products{" "}
+            <br />
+            That Drive Growth
           </h2>
           <p className="lt-lead lt-center" style={{ maxWidth: "500px", margin: "0 auto" }}>
-            From strategy to deployment, we deliver comprehensive digital solutions that drive
-            growth and innovation for businesses worldwide.
+            From strategy to deployment, we deliver web, mobile, cloud, and AI solutions that
+            help ambitious teams ship faster and scale with confidence.
           </p>
         </div>
 
@@ -39,8 +42,42 @@ export default function HomeServicesSection() {
           ))}
         </div>
 
+        {/* Specialized mobile landing pages */}
+        <div style={{ marginTop: "3.5rem" }}>
+          <p
+            className="lt-lead lt-center"
+            style={{ maxWidth: "520px", margin: "0 auto 1.5rem", fontSize: "0.95rem" }}
+          >
+            Explore our specialized mobile offerings:
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "0.65rem",
+            }}
+          >
+            {specializedServices.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="lt-tech-tag"
+                style={{
+                  textDecoration: "none",
+                  padding: "0.55rem 1rem",
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                }}
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* All services link */}
-        <div style={{ textAlign: "center", marginTop: "3.5rem" }}>
+        <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
           <Link href="/services" className="lt-btn">View All Services →</Link>
         </div>
       </div>

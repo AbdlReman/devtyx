@@ -26,7 +26,8 @@ export default function MusicHeroSection() {
             </div>
 
             <h1 className="hero-p-h1" style={{ margin: "0 0 1.5rem", maxWidth: "none" }}>
-              We Build Music Apps<br />
+              We Build Music Apps{" "}
+              <br />
               <span className="hero-p-h1-gradient">That People Play on Repeat</span>
             </h1>
 

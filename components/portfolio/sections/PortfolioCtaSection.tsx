@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 
@@ -7,7 +7,9 @@ export default function PortfolioCtaSection() {
     <div className="dark-cta-band">
       <div className="brelyx-container">
         <h2 className="dark-cta-h2">
-          Have a project in mind?<br />Let&apos;s build it.
+          Have a project in mind?{" "}
+          <br />
+          Let&apos;s build it.
         </h2>
         <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.97rem", lineHeight: 1.8, maxWidth: "480px", margin: "0 auto 2rem" }}>
           We&apos;d love to hear about your idea. Our team will respond within one business day.

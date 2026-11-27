@@ -6,9 +6,9 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Salon App Development Company | Custom Beauty Booking Apps",
+  title: "Salon App Development Company",
   description:
-    "Build a custom salon booking app with Devtyx. Real-time scheduling, payments, staff management, loyalty & AI features. Senior-led team, 70+ products delivered, 98% client satisfaction. Get a free quote.",
+    "Build a custom salon booking app with DEVTYX. Real-time scheduling, payments, staff management, loyalty and AI features. Senior-led team, 70+ products delivered.",
   path: "/salon-app-development",
   image: "/images/salon-app/Multi-device-verview.jpg",
   keywords: [

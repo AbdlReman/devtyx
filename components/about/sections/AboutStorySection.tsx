@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { aboutStats, aboutStoryHighlights } from "../data/about-data";
 
 export default function AboutStorySection() {
@@ -11,7 +11,9 @@ export default function AboutStorySection() {
             <div>
               <div className="lt-kicker">Our Story</div>
               <h2 className="lt-h2" style={{ marginBottom: "1.25rem" }}>
-                Built on trust, delivered<br />through excellence.
+                Built on trust, delivered{" "}
+                <br />
+                through excellence.
               </h2>
               <p className="lt-lead" style={{ marginBottom: "1.25rem" }}>
                 DEVTYX is a collective of strategists, designers, cloud architects, and full-stack engineers.

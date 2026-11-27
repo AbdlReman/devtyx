@@ -2,7 +2,29 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "DEVTYX";
 export const SITE_URL = "https://www.devtyx.com";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/logo.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
+export const BUSINESS_EMAIL = "support@devtyx.com";
+export const BUSINESS_PHONE = "+92-302-005-8237";
+export const BUSINESS_PHONE_E164 = "+923020058237";
+export const BUSINESS_ADDRESS = {
+  streetAddress: "3217 Blackstone Run",
+  addressLocality: "Lawrenceville",
+  addressRegion: "GA",
+  postalCode: "30043",
+  addressCountry: "US",
+  /** Single-line NAP string used in footer / contact UI */
+  formatted: "3217 Blackstone Run, Lawrenceville, GA 30043",
+} as const;
+
+export const SOCIAL_PROFILES = [
+  "https://www.facebook.com/devtyx/",
+  "https://www.instagram.com/thedevtyx/",
+  "https://www.linkedin.com/company/devtyx",
+  "https://clutch.co/profile/devtyx",
+  "https://www.goodfirms.co/company/devtyx",
+  "https://techbehemoths.com/company/devtyx",
+] as const;
+
 export const DEFAULT_KEYWORDS = [
   "DEVTYX",
   "IT services",
@@ -24,6 +46,12 @@ interface BuildMetadataOptions {
   noIndex?: boolean;
 }
 
+/** Prefer absolute titles so the root template does not double-append "| DEVTYX". */
+function absoluteTitle(title: string): string {
+  if (title.includes(SITE_NAME)) return title;
+  return `${title} | ${SITE_NAME}`;
+}
+
 export function buildMetadata({
   title,
   description,
@@ -34,27 +62,32 @@ export function buildMetadata({
   noIndex = false,
 }: BuildMetadataOptions): Metadata {
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
-  const ogImage = image ?? DEFAULT_OG_IMAGE;
+  const ogImage = image
+    ? image.startsWith("http")
+      ? image
+      : `${SITE_URL}${image}`
+    : DEFAULT_OG_IMAGE;
+  const fullTitle = absoluteTitle(title);
 
   return {
-    title,
+    title: { absolute: fullTitle },
     description,
     keywords: keywords && keywords.length ? [...keywords, ...DEFAULT_KEYWORDS] : DEFAULT_KEYWORDS,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       siteName: SITE_NAME,
-      images: [{ url: ogImage }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: SITE_NAME }],
       type,
       locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: fullTitle,
       description,
       images: [ogImage],
     },
@@ -69,18 +102,20 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
+    legalName: "DEVTYX LLC",
     url: SITE_URL,
-    logo: DEFAULT_OG_IMAGE,
-    email: "support@devtyx.com",
+    logo: `${SITE_URL}/images/logo.png`,
+    email: BUSINESS_EMAIL,
+    telephone: BUSINESS_PHONE,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "3217 Blackstone Run",
-      addressLocality: "Lawrenceville",
-      addressRegion: "GA",
-      postalCode: "30043",
-      addressCountry: "US",
+      streetAddress: BUSINESS_ADDRESS.streetAddress,
+      addressLocality: BUSINESS_ADDRESS.addressLocality,
+      addressRegion: BUSINESS_ADDRESS.addressRegion,
+      postalCode: BUSINESS_ADDRESS.postalCode,
+      addressCountry: BUSINESS_ADDRESS.addressCountry,
     },
-    sameAs: [] as string[],
+    sameAs: [...SOCIAL_PROFILES],
   };
 }
 

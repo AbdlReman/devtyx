@@ -21,6 +21,16 @@ const nextConfig: NextConfig = {
     // in lib/image.ts, instead of erroring at request time.
     remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
   },
+  async redirects() {
+    return [
+      // Portfolio slugs must be lowercase; live DB still has "Matrimonial".
+      {
+        source: "/portfolio/Matrimonial",
+        destination: "/portfolio/matrimonial",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     // Conservative, crawl-safe headers only — no CSP here, since one broad
     // enough to allow GA, the TinyMCE/Cloudinary admin uploads, and

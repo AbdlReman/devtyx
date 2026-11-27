@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 
@@ -13,9 +13,23 @@ export default function HomeCtaSection() {
 
       <div className="brelyx-container relative">
         <h2 className="dark-cta-h2">
-          Apply For Free Guide.<br />Build Yourself With This Free Guide.
+          Ready to Build Something{" "}
+          <br />
+          That Scales?
         </h2>
-        <Link href="/contact" className="dark-cta-btn">Let&apos;s Communicate →</Link>
+        <p
+          style={{
+            color: "rgba(255,255,255,0.72)",
+            fontSize: "0.97rem",
+            lineHeight: 1.8,
+            maxWidth: "480px",
+            margin: "0 auto 2rem",
+          }}
+        >
+          Tell us about your product goals — we&apos;ll map the right engagement model and share
+          next steps within one business day.
+        </p>
+        <Link href="/contact" className="dark-cta-btn">Book a Strategy Call →</Link>
       </div>
     </div>
   );

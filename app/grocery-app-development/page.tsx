@@ -6,7 +6,7 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Grocery App Development",
+  title: "Grocery App Development Company — On-Demand Delivery Apps",
   description:
     "DEVTYX designs, builds and scales grocery apps — on-demand delivery, dark stores, supermarket, wholesale and more — for iOS, Android and web.",
   path: "/grocery-app-development",

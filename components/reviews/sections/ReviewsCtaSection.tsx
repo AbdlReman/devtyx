@@ -5,7 +5,7 @@ export default function ReviewsCtaSection() {
     <div className="dark-cta-band">
       <div className="brelyx-container">
         <h2 className="dark-cta-h2">
-          Ready to become our
+          Ready to become our{" "}
           <br />
           next success story?
         </h2>

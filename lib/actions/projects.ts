@@ -11,10 +11,11 @@ import {
   deleteProject as dbDeleteProject,
   type ProjectInput,
 } from "@/lib/models/project";
+import { slugify } from "@/lib/slugify";
 
 function parseProjectForm(formData: FormData): ProjectInput {
   return {
-    slug: requiredString(formData, "slug"),
+    slug: slugify(requiredString(formData, "slug")),
     title: requiredString(formData, "title"),
     tagline: requiredString(formData, "tagline"),
     description: requiredString(formData, "description"),

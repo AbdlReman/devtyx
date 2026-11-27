@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/models/project";
 import { isOptimizableImageSrc } from "@/lib/image";
+import { slugify } from "@/lib/slugify";
 
 export default function PortfolioGridSection({ projects }: { projects: Project[] }) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
@@ -56,7 +57,7 @@ export default function PortfolioGridSection({ projects }: { projects: Project[]
         <div style={{ display: "grid", gap: "1.75rem", gridTemplateColumns: "repeat(3, minmax(0,1fr))" }}
           className="lt-portfolio-grid">
           {filtered.map((project) => (
-            <Link key={project.slug} href={`/portfolio/${project.slug}`} className="lt-card">
+            <Link key={project.slug} href={`/portfolio/${slugify(project.slug)}`} className="lt-card">
               <div className="lt-card-img lt-card-img-wide">
                 <Image
                   src={project.image}

@@ -2,13 +2,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getAllServices } from "@/lib/data/services";
+import { specializedServices } from "@/lib/data/specialized-services";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { isOptimizableImageSrc } from "@/lib/image";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Services",
-  description: "End-to-end technology services — web, mobile, AI, cloud, design, and strategy.",
+  title: "IT Services & Digital Solutions — Web, Mobile, AI & Cloud",
+  description:
+    "End-to-end DEVTYX technology services — custom web software, mobile apps, AI, cloud DevOps, UI/UX design, and digital strategy.",
   path: "/services",
 });
 
@@ -125,8 +127,50 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── Why DEVTYX ─────────────────────────────────────── */}
+        {/* ── Specialized mobile solutions ───────────────────── */}
         <section className="lt-section">
+          <div className="brelyx-container">
+            <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div className="lt-kicker">Mobile Solutions</div>
+              </div>
+              <h2 className="lt-h2">Specialized app development pages</h2>
+              <p className="lt-lead">
+                Deep-dive into the product types we ship most often — from hybrid and native builds
+                to grocery, salon, music, and startup MVPs.
+              </p>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gap: "1.25rem",
+                gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+              }}
+            >
+              {specializedServices.map((svc) => (
+                <Link
+                  key={svc.href}
+                  href={svc.href}
+                  className="lt-why-card"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "#111827", marginBottom: "0.5rem" }}>
+                    {svc.label}
+                  </div>
+                  <p style={{ fontSize: "0.82rem", color: "#6B7280", lineHeight: 1.7, marginBottom: "0.75rem" }}>
+                    {svc.blurb}
+                  </p>
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600, color: "#6C4CFF" }}>
+                    Explore →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Why DEVTYX ─────────────────────────────────────── */}
+        <section className="lt-section-alt">
           <div className="brelyx-container">
             <div style={{ textAlign: "center", maxWidth: "600px", margin: "0 auto 4rem" }}>
               <div style={{ display: "flex", justifyContent: "center" }}>

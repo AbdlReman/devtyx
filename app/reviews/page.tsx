@@ -4,11 +4,11 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Client Reviews",
+  title: "Client Reviews — Google, Clutch & GoodFirms",
   description:
-    "Read DEVTYX client reviews on Google, Clutch, and TechBehemoths — real feedback from teams we've shipped with worldwide.",
+    "Read DEVTYX client reviews on Google, Clutch, GoodFirms, and TechBehemoths — real feedback from teams we've shipped with worldwide.",
   path: "/reviews",
-  keywords: ["DEVTYX reviews", "client testimonials", "Clutch", "Google reviews", "TechBehemoths"],
+  keywords: ["DEVTYX reviews", "client testimonials", "Clutch", "GoodFirms", "Google reviews", "TechBehemoths"],
 });
 
 export default function ReviewsPage() {
