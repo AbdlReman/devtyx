@@ -13,13 +13,12 @@ const nextConfig: NextConfig = {
     },
   },
   images: {
-    // Local assets and Cloudinary uploads (the normal upload path) get
-    // resized/reformatted (WebP/AVIF) through Next's image optimizer.
-    // Admin fields also accept an arbitrary pasted URL though, and Next
-    // can't optimize a host it doesn't know about — those fall back to
-    // `unoptimized` on the individual <Image>, via isOptimizableImageSrc()
-    // in lib/image.ts, instead of erroring at request time.
-    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
+    // Keep the optimizer off. Re-enabling it caused intermittent blank
+    // images site-wide (`isn't a valid image … received null`) on local
+    // assets under concurrent page loads. Images still render via their
+    // original /images/* (and Cloudinary) URLs; arbitrary pasted admin
+    // URLs also keep working without a remotePatterns allowlist.
+    unoptimized: true,
   },
   async redirects() {
     return [

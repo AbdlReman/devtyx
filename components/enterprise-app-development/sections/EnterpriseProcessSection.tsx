@@ -1,11 +1,10 @@
-import Image from "next/image";
 import { processSteps } from "../data/enterprise-app-development-data";
 
 export default function EnterpriseProcessSection() {
   return (
     <section className="lt-section">
       <div className="brelyx-container">
-        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
+        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 2.5rem" }}>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="lt-kicker">How We Work</div>
           </div>
@@ -16,22 +15,25 @@ export default function EnterpriseProcessSection() {
           </p>
         </div>
 
+        {/* Full-width process image — always visible */}
         <div
           style={{
-            position: "relative",
-            aspectRatio: "16/7",
             borderRadius: "1.5rem",
             overflow: "hidden",
             border: "1px solid #E5E7EB",
             boxShadow: "0 20px 50px rgba(108,76,255,0.12)",
             marginBottom: "3rem",
+            background: "#0B1220",
           }}
         >
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/enterprise-app/enterprise-software-process-1.jpg"
             alt="DEVTYX enterprise app development process from discovery to support"
-            fill
-            className="object-cover object-center"
+            width={1792}
+            height={1008}
+            loading="lazy"
+            style={{ width: "100%", height: "auto", maxWidth: "100%", display: "block" }}
           />
         </div>
 

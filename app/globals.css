@@ -33,6 +33,14 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
+/* next/image fill sets absolute width/height 100%; global max-width
+   collapses those and leaves the card's placeholder background showing. */
+img[data-nimg="fill"] {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+
 input, button, textarea, select {
   font: inherit;
   color: inherit;

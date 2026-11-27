@@ -1,7 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import QuickInquiryButton from "@/components/contact/QuickInquiryButton";
 import { trustStats } from "../data/enterprise-app-development-data";
+
+const HERO_BG = "/images/enterprise-app/professional-enterprise-software-development-3.jpg";
 
 export default function EnterpriseHeroSection() {
   return (
@@ -9,33 +10,16 @@ export default function EnterpriseHeroSection() {
       className="hero-purple-section"
       style={{
         textAlign: "left",
+        paddingTop: "10rem",
         paddingBottom: "5rem",
         position: "relative",
         overflow: "hidden",
-        background: "transparent",
+        backgroundImage: `linear-gradient(105deg, rgba(8,6,28,0.78) 0%, rgba(15,10,45,0.58) 50%, rgba(8,6,28,0.4) 100%), url(${HERO_BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Full-bleed background image */}
-      <Image
-        src="/images/enterprise-app/professional-enterprise-software-development-3.jpg"
-        alt=""
-        fill
-        priority
-        className="object-cover object-center"
-        style={{ zIndex: 0 }}
-        aria-hidden="true"
-      />
-
-      {/* Dark overlay for readable text */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          zIndex: 1,
-          background:
-            "linear-gradient(105deg, rgba(15,10,40,0.92) 0%, rgba(26,12,70,0.82) 48%, rgba(15,10,40,0.55) 100%)",
-        }}
-      />
-
       <div className="brelyx-container" style={{ position: "relative", zIndex: 2 }}>
         <div style={{ maxWidth: "700px" }}>
           <div className="hero-p-badge" style={{ margin: "0 0 2rem" }}>

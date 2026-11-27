@@ -97,6 +97,7 @@ export default function ServicesPage() {
                       src={svc.image}
                       alt={svc.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover object-center"
                       unoptimized={!isOptimizableImageSrc(svc.image)}
                     />
