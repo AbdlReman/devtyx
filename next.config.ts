@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         destination: "/enterprise-app-development",
         permanent: true,
       },
+      {
+        source: "/services/software-development-partner",
+        destination: "/software-development-partner",
+        permanent: true,
+      },
     ];
   },
   async headers() {

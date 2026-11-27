@@ -1,6 +1,11 @@
 /** Landing pages for specialized offerings — keep in sync with Header serviceLinks. */
 export const specializedServices = [
   {
+    label: "Software Development Partner",
+    href: "/software-development-partner",
+    blurb: "A long-term partner that plans, builds and scales your web, mobile, cloud and AI products.",
+  },
+  {
     label: "Enterprise App Development",
     href: "/enterprise-app-development",
     blurb: "Secure, scalable web, mobile, cloud and AI apps that integrate with your systems.",

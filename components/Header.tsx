@@ -23,7 +23,13 @@ type ServiceNavItem = {
 // database or any JSON data file, so it always renders even if that data changes.
 
 const serviceLinks: ServiceNavItem[] = [
-  { label: "Web & Custom Software", href: "/services/web-custom-software" },
+  {
+    label: "Web & Custom Software",
+    href: "/services/web-custom-software",
+    subItems: [
+      { label: "Software Development Partner", href: "/software-development-partner" },
+    ],
+  },
   {
     label: "Mobile & Experience",
     href: "/services/mobile-experience",
