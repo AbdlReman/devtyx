@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { specializedServices } from "@/lib/data/specialized-services";
 import { BUSINESS_ADDRESS, BUSINESS_EMAIL, BUSINESS_PHONE } from "@/lib/seo";
 
 const socialIcons: Record<string, React.ReactNode> = {
@@ -77,11 +76,6 @@ export default function Footer() {
                 ["Digital Strategy", "/services/digital-strategy-consulting"],
               ] as [string, string][]).map(([label, href]) => (
                 <li key={label}><Link href={href} className="brelyx-footer-link">{label}</Link></li>
-              ))}
-              {specializedServices.map((s) => (
-                <li key={s.href}>
-                  <Link href={s.href} className="brelyx-footer-link">{s.label}</Link>
-                </li>
               ))}
             </ul>
           </div>
