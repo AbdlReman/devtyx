@@ -28,6 +28,7 @@ const serviceLinks: ServiceNavItem[] = [
     href: "/services/web-custom-software",
     subItems: [
       { label: "Software Development Partner", href: "/software-development-partner" },
+      { label: "Custom Web Development", href: "/custom-web-development-services" },
     ],
   },
   {

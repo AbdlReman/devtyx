@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
         destination: "/software-development-partner",
         permanent: true,
       },
+      {
+        source: "/services/custom-web-development-services",
+        destination: "/custom-web-development-services",
+        permanent: true,
+      },
     ];
   },
   async headers() {

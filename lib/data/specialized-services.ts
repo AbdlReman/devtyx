@@ -6,6 +6,11 @@ export const specializedServices = [
     blurb: "A long-term partner that plans, builds and scales your web, mobile, cloud and AI products.",
   },
   {
+    label: "Custom Web Development Services",
+    href: "/custom-web-development-services",
+    blurb: "Custom websites, web apps and portals with Next.js, React and Node.js — you own the code.",
+  },
+  {
     label: "Enterprise App Development",
     href: "/enterprise-app-development",
     blurb: "Secure, scalable web, mobile, cloud and AI apps that integrate with your systems.",
